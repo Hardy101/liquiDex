@@ -32,7 +32,11 @@
   font-family: poppins-thin;
   src: url(fonts/Poppins-Thin.ttf);
 }
-input[type="checkbox"] {
-  accent-color: red;
-  background-color: red;
+ /* input[type="checkbox"] { */
+  /* appearance: none; */
+  /* accent-color: red; */
+  /* @apply w-4 h-4 bg-transparent border border-grey-4 rounded-sm; */
+/* } */
+input[type="checkbox"]:checked {
+  background-color: #4caf50; /* Color when checked */
 }
