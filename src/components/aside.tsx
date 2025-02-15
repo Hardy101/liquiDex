@@ -11,7 +11,7 @@ const AsidesSection: React.FC = () => {
           <a className="grow">
             <img src={Logo} alt="logo" className="w-8" />
           </a>
-          <ul className="grow mx-auto text-2xl grow grid gap-3">
+          <ul className="grow mx-auto text-xl grow grid gap-3">
             <li>
               <a href="">
                 <i className="lni lni-dashboard-square-1"></i>
@@ -25,6 +25,24 @@ const AsidesSection: React.FC = () => {
             <li>
               <a href="">
                 <i className="lni lni-bar-chart-4"></i>
+              </a>
+            </li>
+          </ul>
+
+          <ul className="mx-auto text-xl grid gap-3">
+            <li>
+              <a>
+                <i className="lni lni-gear-1"></i>
+              </a>
+            </li>
+            <li>
+              <a>
+              <i className="lni lni-question-mark-circle"></i>
+              </a>
+            </li>
+            <li>
+              <a>
+              <i className="lni lni-enter"></i>
               </a>
             </li>
           </ul>

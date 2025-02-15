@@ -55,12 +55,24 @@ const Dashboard: React.FC = () => {
               </span>
             </h2>
 
-            <form action="#" className="flex border border-grey-3 rounded-md pl-2 py-1 my-auto">
+            <form
+              action="#"
+              className="flex border border-grey-3 bg-dark-1 rounded-md pl-2 py-1 my-auto"
+            >
               <i className="lni lni-search-1 my-auto"></i>
-              <input type="text" name="" id="" placeholder="Search for bots" className="grow my-auto px-2 outline-none" />
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Search for bots"
+                className="grow my-auto px-2 outline-none"
+              />
             </form>
 
-            <form action="#" className="border border-grey-3 rounded-md px-2 py-1">
+            <form
+              action="#"
+              className="bg-dark-1 border border-grey-3 rounded-md px-2 py-1"
+            >
               <select name="" id="" className="outline-none">
                 <option value="#">Filter by Access</option>
               </select>

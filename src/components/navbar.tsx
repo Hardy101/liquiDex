@@ -7,7 +7,7 @@ const NavBar: React.FC = () => {
         <h1 className="grow my-auto">Dashboard</h1>
         <form
           action="#"
-          className="flex border border-grey-3 rounded-md pl-2 py-1 my-auto text-xs"
+          className="flex border border-grey-3 rounded-md pl-2 py-2 my-auto text-xs bg-dark-1"
         >
           <i className="lni lni-search-1 my-auto"></i>
           <input
@@ -20,14 +20,14 @@ const NavBar: React.FC = () => {
         </form>
 
         <ul className="flex gap-4 my-auto text-sm">
-          <li className="bg-dark-1 border-1 border-grey-1 rounded-lg py-1 px-2">
-            <i className="lni lni-gear-1"></i>
+          <li className="bg-dark-1 border-1 border-dark-3 rounded-lg py-2 px-2 flex">
+            <i className="lni lni-gear-1 m-auto"></i>
           </li>
-          <li className="bg-dark-1 border-1 border-grey-1 rounded-lg py-1 px-2">
-            <i className="lni lni-bell-1"></i>
+          <li className="bg-dark-1 border-1 border-dark-3 rounded-lg py-2 px-2 flex">
+            <i className="lni lni-bell-1 m-auto"></i>
           </li>
-          <li className="bg-dark-1 border-1 border-grey-1 rounded-lg py-1 px-2">
-            <i className="lni lni-wallet-1"></i>
+          <li className="bg-dark-1 border-1 border-dark-3 rounded-lg py-2 px-2 flex">
+            <i className="lni lni-wallet-1 m-auto"></i>
           </li>
         </ul>
       </nav>
