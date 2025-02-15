@@ -19,3 +19,12 @@
 .sec-nav-btn {
   @apply flex justify-center gap-2 px-8 py-2 w-full rounded-md;
 }
+/* Fonts */
+@font-face {
+  font-family: poppins-regular;
+  src: url(fonts/Poppins-Regular.ttf);
+}
+
+body {
+  font-family: poppins-regular;
+}

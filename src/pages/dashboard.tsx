@@ -47,7 +47,7 @@ const Dashboard: React.FC = () => {
               ))}
             </ul>
           </div>
-          <div className="flex justify-between gap-4 sec-nav bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1 text-sm">
+          <div className="flex justify-between gap-4 sec-nav bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1 text-xs">
             <h2 className="text-xl font-bold flex gap-4 grow">
               <span className="my-auto">My Bots</span>
               <span className="bg-dark-3 border border-light-1 rounded-md px-2 text-xs font-medium my-auto">
@@ -61,12 +61,12 @@ const Dashboard: React.FC = () => {
             </form>
 
             <form action="#" className="border border-grey-3 rounded-md px-2 py-1">
-              <select name="" id="" className="">
+              <select name="" id="" className="outline-none">
                 <option value="#">Filter by Access</option>
               </select>
             </form>
 
-            <button className="flex bg-light-1 gap-2 rounded-md px-2 py-1 text-black font-medium">
+            <button className="flex bg-light-1 gap-2 rounded-md pl-2 pr-3 py-1 text-black font-medium">
               <i className="lni lni-plus my-auto"></i>
               <span className="my-auto">Create new bot</span>
             </button>
