@@ -6,7 +6,7 @@ import Logo from "../assets/logo.png";
 const AsidesSection: React.FC = () => {
   return (
     <>
-      <aside className="bg-dark-2 text-white p-4 border-r border-gray-400">
+      <aside className="bg-dark-2 text-white p-4 border-r border-grey-3">
         <div className="flex flex-col gap-16">
           <a className="grow">
             <img src={Logo} alt="logo" className="w-8" />
