@@ -1,6 +1,7 @@
 import React from "react";
 import AsidesSection from "../components/aside";
 import NavBar from "../components/navbar";
+import Table from "../components/table";
 
 const Dashboard: React.FC = () => {
   const secnavbtn = [
@@ -84,6 +85,7 @@ const Dashboard: React.FC = () => {
             </button>
           </div>
         </div>
+        <Table />
       </main>
     </>
   );

@@ -19,6 +19,11 @@ const AsidesSection: React.FC = () => {
             </li>
             <li>
               <a href="">
+              <i className="lni lni-android"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
                 <i className="lni lni-database-2"></i>
               </a>
             </li>

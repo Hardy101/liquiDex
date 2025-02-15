@@ -9,6 +9,10 @@
   --color-grey-2: #b8b8b8;
   --color-grey-3: #2d2d2d;
   --color-grey-4: #919191;
+
+  /* Fonts */
+  --font-poppins-regular: poppins-regular;
+  --font-poppins-thin: poppins-thin;
 }
 
 .bg-1 {
@@ -24,7 +28,11 @@
   font-family: poppins-regular;
   src: url(fonts/Poppins-Regular.ttf);
 }
-
-body {
-  font-family: poppins-regular;
+@font-face {
+  font-family: poppins-thin;
+  src: url(fonts/Poppins-Thin.ttf);
+}
+input[type="checkbox"] {
+  accent-color: red;
+  background-color: red;
 }
