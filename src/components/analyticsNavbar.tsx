@@ -32,7 +32,7 @@ const AnalyticsNavbar: React.FC<Props> = ({ activeTab, setActiveTab }) => {
             <li key={index}>
               <button
                 className={`sec-nav-btn cursor-pointer ${
-                  activeTab == id ? "bg-light-1 text-black" : ""
+                  activeTab == id ? "gradient-1 text-black" : ""
                 }`}
                 onClick={() => setActiveTab(id)}
               >

@@ -1,9 +1,14 @@
 import React from "react";
 
 const TradeHistory: React.FC = () => {
+  const trade_types = [
+    { type: "all_trades", txt: "All Trades", amnt: "57" },
+    { type: "buy", txt: "Buy Side", amnt: "29" },
+    { type: "sell", txt: "Sell Side", amnt: "28" },
+  ];
   return (
-    <div className="bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1 text-xs grid gap-4">
-      <div className="flex justify-between gap-4">
+    <div className=" text-light-1 text-xs grid gap-4">
+      <div className="bg-dark-2 border border-grey-3 rounded-xl p-3 flex justify-between gap-4">
         <h2 className="text-xl font-bold flex gap-4 grow">
           <span className="my-auto">Trade History</span>
           <span className="bg-dark-3 border border-light-1 rounded-md px-2 text-xs font-medium my-auto">
@@ -59,6 +64,19 @@ const TradeHistory: React.FC = () => {
           </div>
         </form>
       </div>
+
+      {/* Trades */}
+      <ul className="flex gap-4 text-sm border-b pb-2 border-grey-4">
+        {/* {asides_nav_link.map(({ icon, path, status }, index) => { */}
+        {trade_types.map(({ txt, amnt }, index) => (
+          <li className="flex gap-2">
+            <span>{txt}</span>
+            <span className="bg-light-1 rounded-md px-2 text-dark-1 text-xs my-auto">
+              {amnt}
+            </span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

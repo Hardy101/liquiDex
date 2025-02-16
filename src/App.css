@@ -35,6 +35,14 @@
 .a-dashboard-info-p {
   @apply flex flex-col gap-1;
 }
+.gradient-1 {
+  background: rgb(249, 249, 249);
+  background: linear-gradient(
+    180deg,
+    rgba(249, 249, 249, 1) 0%,
+    rgba(123, 123, 123, 1) 100%
+  );
+}
 /* Fonts */
 @font-face {
   font-family: poppins-regular;
