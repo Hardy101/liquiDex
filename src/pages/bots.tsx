@@ -38,7 +38,7 @@ const Bots: React.FC = () => {
                 <li key={index}>
                   <button
                     className={`sec-nav-btn ${
-                      btn == "My Bots" ? "bg-light-1 text-black" : ""
+                      btn == "My Bots" ? "gradient-1 text-black" : ""
                     }`}
                   >
                     <i className={icon}></i>
@@ -79,7 +79,7 @@ const Bots: React.FC = () => {
               </select>
             </form>
 
-            <button className="flex bg-light-1 gap-2 rounded-md pl-2 pr-3 py-1 text-black font-medium">
+            <button className="flex gradient-1 gap-2 rounded-md pl-2 pr-3 py-1 text-black font-medium">
               <i className="lni lni-plus my-auto"></i>
               <span className="my-auto">Create new bot</span>
             </button>
