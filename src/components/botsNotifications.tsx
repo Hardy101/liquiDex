@@ -17,7 +17,7 @@ const BotsNotifications: React.FC = () => {
 
         <div className="border border-grey-3 bg-dark-1 rounded-md pl-2 py-1 my-auto text-xs mt-4">
           <p>
-            Order Executed: "Your buy order for 100 shares of AAPL at{" "}
+            Order Executed: "Your buy order for 100 shares of AAPL at
             <span className="text-green-400">$150.00</span> has been executed."
           </p>
         </div>

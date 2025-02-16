@@ -16,18 +16,13 @@ const secnavbtn = [
     txt: "Trade History",
     icon: "lni lni-clipboard my-auto",
   },
-  {
-    id: "report",
-    txt: "Custom Reports",
-    icon: "lni lni-file-multiple my-auto",
-  },
 ];
 
 const AnalyticsNavbar: React.FC<Props> = ({ activeTab, setActiveTab }) => {
   return (
     <>
       <div className="sec-nav bg-dark-2 border border-grey-3 rounded-xl p-3">
-        <ul className="navlinks rounded-md text-grey-2 font-bold text-xs text-center grid grid-cols-3 bg-dark-1 p-1">
+        <ul className="navlinks rounded-md text-grey-2 font-bold text-xs text-center grid grid-cols-2 bg-dark-1 p-1">
           {secnavbtn.map(({ id, txt, icon }, index) => (
             <li key={index}>
               <button
