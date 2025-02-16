@@ -9,7 +9,7 @@ const AsidesSection: React.FC = () => {
     { icon: "lni lni-dashboard-square-1", path: "/", status: "not-active" },
     { icon: "lni lni-android", path: "/bots", status: "not-active" },
     { icon: "lni lni-database-2", path: "#", status: "not-active" },
-    { icon: "lni lni-bar-chart-4", path: "#", status: "not-active" },
+    { icon: "lni lni-bar-chart-4", path: "/analytics", status: "not-active" },
   ];
 
   return (

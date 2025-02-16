@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Bots from "./pages/bots";
 import Dashboard from "./pages/dashboard";
+import Analytics from "./pages/analytics";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/bots" element={<Bots />} />
+          <Route path="/analytics" element={<Analytics />} />
         </Routes>
       </Router>
     </>

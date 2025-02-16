@@ -26,6 +26,9 @@
 .active {
   @apply bg-light-1 rounded-lg text-dark-1 flex;
 }
+.analytics-dashboard {
+  @apply outline-none w-full bg-dark-1 border border-grey-3 rounded-md px-2 py-1;
+}
 /* Fonts */
 @font-face {
   font-family: poppins-regular;
