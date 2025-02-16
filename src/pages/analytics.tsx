@@ -4,6 +4,7 @@ import AsidesSection from "../components/aside";
 import NavBar from "../components/navbar";
 import AnalyticsNavbar from "../components/analyticsNavbar";
 import AnalyticsDashboard from "../components/analyticsDashboard";
+import TradeHistory from "../components/tradeHistory";
 
 const Analytics: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Analytics: React.FC = () => {
         <div className="body p-8 grid gap-8">
           <AnalyticsNavbar />
           <AnalyticsDashboard />
+          <TradeHistory />
         </div>
       </main>
     </>

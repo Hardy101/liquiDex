@@ -25,7 +25,7 @@ const AnalyticsNavbar: React.FC = () => {
           {secnavbtn.map(({ txt, icon }, index) => (
             <li key={index}>
               <button
-                className={`sec-nav-btn ${
+                className={`sec-nav-btn cursor-pointer ${
                   txt == "Statistics Dashboard" ? "bg-light-1 text-black" : ""
                 }`}
               >
