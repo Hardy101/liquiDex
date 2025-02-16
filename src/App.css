@@ -26,8 +26,11 @@
 .active {
   @apply bg-light-1 rounded-lg text-dark-1 flex;
 }
-.analytics-dashboard {
+.analytics-dashboard-select {
   @apply outline-none w-full bg-dark-1 border border-grey-3 rounded-md px-2 py-1;
+}
+.a-dashboard-info-p {
+  @apply flex flex-col gap-1;
 }
 /* Fonts */
 @font-face {
