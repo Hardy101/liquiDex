@@ -103,13 +103,19 @@ const Table: React.FC = () => {
           </tr>
         </tbody>
       </table>
-      <div className="flex justify-between p-2 w-full text-xs bg-dark-2 rounded-b-xl">
-        <button>Previous</button>
-        <button className="grow">
-          <span>1</span>
-          <span>2</span>
+      <div className="flex justify-between w-full text-xs bg-dark-2 rounded-b-xl text-grey-4 py-1">
+        <button className="flex gap-2 p-2">
+          <i className="lni lni-arrow-left my-auto"></i>
+          <span className="my-auto">Previous</span>
         </button>
-        <button>Next</button>
+        <button className="grow justify-center flex gap-2">
+          <span className="bg-dark-1 rounded-sm px-2 py-1 my-auto">1</span>
+          <span className="my-auto">2</span>
+        </button>
+        <button className="flex gap-2 p-2">
+          <span className="my-auto">Next</span>
+          <i className="lni lni-arrow-right my-auto"></i>
+        </button>
       </div>
     </div>
   );

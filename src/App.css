@@ -23,6 +23,9 @@
 .sec-nav-btn {
   @apply flex justify-center gap-2 px-8 py-2 w-full rounded-md;
 }
+.active {
+  @apply bg-light-1 rounded-lg text-dark-1 flex;
+}
 /* Fonts */
 @font-face {
   font-family: poppins-regular;
@@ -32,10 +35,10 @@
   font-family: poppins-thin;
   src: url(fonts/Poppins-Thin.ttf);
 }
- /* input[type="checkbox"] { */
-  /* appearance: none; */
-  /* accent-color: red; */
-  /* @apply w-4 h-4 bg-transparent border border-grey-4 rounded-sm; */
+/* input[type="checkbox"] { */
+/* appearance: none; */
+/* accent-color: red; */
+/* @apply w-4 h-4 bg-transparent border border-grey-4 rounded-sm; */
 /* } */
 input[type="checkbox"]:checked {
   background-color: #4caf50; /* Color when checked */

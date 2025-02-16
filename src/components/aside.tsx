@@ -1,37 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Media
 import Logo from "../assets/logo.png";
 
 const AsidesSection: React.FC = () => {
+  const asides_nav_link = [
+    { icon: "lni lni-dashboard-square-1", path: "/", status: "not-active" },
+    { icon: "lni lni-android", path: "/bots", status: "not-active" },
+    { icon: "lni lni-database-2", path: "#", status: "not-active" },
+    { icon: "lni lni-bar-chart-4", path: "#", status: "not-active" },
+  ];
+
   return (
     <>
-      <aside className="bg-dark-2 text-white p-4 border-r border-grey-3">
-        <div className="flex flex-col gap-16">
-          <a className="grow">
+      <aside className="fixed top-0 h-screen bg-dark-2 text-white p-4 border-r border-grey-3">
+        <div className="h-full flex flex-col gap-16">
+          <a>
             <img src={Logo} alt="logo" className="w-8" />
           </a>
-          <ul className="grow mx-auto text-xl grow grid gap-3">
-            <li>
-              <a href="">
-                <i className="lni lni-dashboard-square-1"></i>
-              </a>
-            </li>
-            <li>
-              <a href="">
-              <i className="lni lni-android"></i>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <i className="lni lni-database-2"></i>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <i className="lni lni-bar-chart-4"></i>
-              </a>
-            </li>
+          <ul className="grow mx-auto text-xl flex flex-col gap-3">
+            {asides_nav_link.map(({ icon, path, status }, index) => {
+              const isActive = location.pathname === path ? "active" : status;
+              return (
+                <li key={index} className={isActive}>
+                  <Link to={path} className="flex p-1">
+                    <i className={icon}></i>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
           <ul className="mx-auto text-xl grid gap-3">
@@ -42,12 +40,12 @@ const AsidesSection: React.FC = () => {
             </li>
             <li>
               <a>
-              <i className="lni lni-question-mark-circle"></i>
+                <i className="lni lni-question-mark-circle"></i>
               </a>
             </li>
             <li>
               <a>
-              <i className="lni lni-enter"></i>
+                <i className="lni lni-enter"></i>
               </a>
             </li>
           </ul>

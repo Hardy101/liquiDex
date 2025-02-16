@@ -20,13 +20,13 @@ const NavBar: React.FC = () => {
         </form>
 
         <ul className="flex gap-4 my-auto text-sm">
-          <li className="bg-dark-1 border-1 border-dark-3 rounded-lg py-2 px-2 flex">
+          <li className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex">
             <i className="lni lni-gear-1 m-auto"></i>
           </li>
-          <li className="bg-dark-1 border-1 border-dark-3 rounded-lg py-2 px-2 flex">
+          <li className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex">
             <i className="lni lni-bell-1 m-auto"></i>
           </li>
-          <li className="bg-dark-1 border-1 border-dark-3 rounded-lg py-2 px-2 flex">
+          <li className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex">
             <i className="lni lni-wallet-1 m-auto"></i>
           </li>
         </ul>
