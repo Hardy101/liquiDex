@@ -1,6 +1,6 @@
 interface Props {
-  activeBotTab: string;
-  setActiveBotTab: (tab: string) => void;
+  activeBotTab: boolean;
+  setActiveBotTab: (tab: boolean) => void;
 }
 
 const BotsHeading: React.FC<Props> = ({ activeBotTab, setActiveBotTab }) => {
@@ -38,7 +38,10 @@ const BotsHeading: React.FC<Props> = ({ activeBotTab, setActiveBotTab }) => {
 
       <button
         className="flex gradient-1 gap-2 rounded-md pl-2 pr-3 py-1 text-black font-medium"
-        onClick={() => setActiveBotTab("active")}
+        onClick={(e) => {
+          e.stopPropagation();
+          setActiveBotTab(true);
+        }}
       >
         <i className="lni lni-plus my-auto"></i>
         <span className="my-auto">Create new bot</span>
