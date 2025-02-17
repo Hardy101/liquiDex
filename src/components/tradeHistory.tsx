@@ -89,7 +89,7 @@ const TradeHistory: React.FC = () => {
         </div>
         {/* Filter Trades */}
         <div>
-          <form action="#" className="grid grid-cols-5 gap-4">
+          <form action="#" className="grid grid-cols-4 gap-4">
             <div className="">
               <input
                 type="date"
@@ -102,11 +102,6 @@ const TradeHistory: React.FC = () => {
             <div>
               <select name="" id="" className="analytics-dashboard-select">
                 <option value="#">Filter By Coin</option>
-              </select>
-            </div>
-            <div>
-              <select name="" id="" className="analytics-dashboard-select">
-                <option value="#">Filter By Price</option>
               </select>
             </div>
             <div>
