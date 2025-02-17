@@ -35,6 +35,9 @@
 .a-dashboard-info-p {
   @apply flex flex-col gap-1;
 }
+button {
+  cursor: pointer;
+}
 .gradient-1 {
   background: rgb(249, 249, 249);
   background: linear-gradient(
