@@ -1,4 +1,5 @@
 import React from "react";
+import ActionToggleBtn from "./actionToggleBtn";
 
 const Table: React.FC = () => {
   return (
@@ -43,12 +44,7 @@ const Table: React.FC = () => {
             <td>Full Access</td>
             <td>.</td>
             <td>
-              <button className="flex gap-2 bg-dark-2 border-grey-3 py-1 px-3 rounded-md">
-                <span className="my-auto">On</span>
-                <span className="inline-block bg-green-300 rounded-2xl relative w-5 h-3 my-auto">
-                  <span className="absolute right-0 top-0 w-3 h-full bg-white rounded-2xl"></span>
-                </span>
-              </button>
+              <ActionToggleBtn defaultState={true} />
             </td>
             <td className="text-lg flex gap-1">
               <button className="my-auto">
@@ -82,12 +78,7 @@ const Table: React.FC = () => {
             <td>Limited Access</td>
             <td>.</td>
             <td>
-              <button className="flex gap-2 bg-dark-2 border-grey-3 py-1 px-3 rounded-md">
-                <span className="my-auto">Off</span>
-                <span className="inline-block bg-grey-2 rounded-2xl relative w-5 h-3 my-auto">
-                  <span className="absolute left-0 top-0 w-3 h-full bg-white rounded-2xl"></span>
-                </span>
-              </button>
+              <ActionToggleBtn defaultState={false} />
             </td>
             <td className="text-lg flex gap-1">
               <button className="my-auto">
