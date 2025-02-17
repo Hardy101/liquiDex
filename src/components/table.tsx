@@ -3,7 +3,7 @@ import ActionToggleBtn from "./actionToggleBtn";
 
 const Table: React.FC = () => {
   return (
-    <div className="px-8 text-light-1">
+    <div className="text-light-1">
       <table className="w-full text-xs border border-grey-3 rounded-t-xl border-separate border-spacing-0 overflow-hidden">
         <thead>
           <tr className="text-left font-poppins-thin text-grey-4 bg-dark-2">
