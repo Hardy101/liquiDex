@@ -29,11 +29,21 @@ const NavBar: React.FC = () => {
               <i className="lni lni-gear-1 m-auto"></i>
             </Link>
           </li>
-          <li className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex">
-            <i className="lni lni-bell-1 m-auto"></i>
+          <li>
+            <Link
+              to="#"
+              className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex"
+            >
+              <i className="lni lni-bell-1 m-auto"></i>
+            </Link>
           </li>
-          <li className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex">
-            <i className="lni lni-wallet-1 m-auto"></i>
+          <li>
+            <Link
+              to="#"
+              className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex"
+            >
+              <i className="lni lni-wallet-1 m-auto"></i>
+            </Link>
           </li>
         </ul>
       </nav>
