@@ -34,7 +34,7 @@ const Bots: React.FC = () => {
   return (
     <>
       <AsidesSection />
-      <main
+      <main 
         className="relative min-h-dvh ml-12 w-full bg-dark-1 overflow-hidden"
         onClick={(e) => {
           e.stopPropagation();
