@@ -8,29 +8,29 @@ import BotsHeading from "./botsHeading";
 import gsap from "gsap";
 
 interface Props {
-  activeBotTab: boolean;
+  isBotSidebarActive: boolean;
   activeTab: string;
-  setActiveBotTab: (tab: boolean) => void;
+  setIsBotSidebarActive: (tab: boolean) => void;
   setActiveTab: (tab: string) => void;
 }
 
 const MyBots: React.FC<Props> = ({
   activeTab,
-  activeBotTab,
+  isBotSidebarActive,
   setActiveTab,
-  setActiveBotTab,
+  setIsBotSidebarActive,
 }) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (activeBotTab && sidebarRef.current) {
+    if (isBotSidebarActive && sidebarRef.current) {
       gsap.to(sidebarRef.current, {
         x: 0,
         opacity: 1,
         duration: 0.5,
         ease: "power3.out",
       });
-    } else if (!activeBotTab && sidebarRef.current) {
+    } else if (!isBotSidebarActive && sidebarRef.current) {
       gsap.to(sidebarRef.current, {
         x: "100%",
         opacity: 0,
@@ -38,7 +38,7 @@ const MyBots: React.FC<Props> = ({
         ease: "power3.in",
       });
     }
-  }, [activeBotTab]);
+  }, [isBotSidebarActive]);
   const secnavbtn = [
     {
       tab_id: "start",
@@ -66,8 +66,8 @@ const MyBots: React.FC<Props> = ({
       <div className="px-8 mt-8 grid gap-8 pb-8">
         <CreateNewBot
           ref={sidebarRef}
-          activeBotTab={activeBotTab}
-          setActiveBotTab={setActiveBotTab}
+          isBotSidebarActive={isBotSidebarActive}
+          setIsBotSidebarActive={setIsBotSidebarActive}
         />
         <BotsNavBar
           activeTab={activeTab}
@@ -75,8 +75,8 @@ const MyBots: React.FC<Props> = ({
           secnavbtn={secnavbtn}
         />
         <BotsHeading
-          activeBotTab={activeBotTab}
-          setActiveBotTab={setActiveBotTab}
+          isBotSidebarActive={isBotSidebarActive}
+          setIsBotSidebarActive={setIsBotSidebarActive}
         />
         <Table />
       </div>

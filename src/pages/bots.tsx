@@ -5,7 +5,7 @@ import NavBar from "../components/navbar";
 import MyBots from "../components/myBots";
 
 const Bots: React.FC = () => {
-  const [activeBotTab, setActiveBotTab] = useState(false);
+  const [isBotSidebarActive, setIsBotSidebarActive] = useState(false);
   const [activeTab, setActiveTab] = useState("start");
 
   return (
@@ -15,15 +15,15 @@ const Bots: React.FC = () => {
         className="relative min-h-dvh ml-12 w-full bg-dark-1 overflow-hidden"
         onClick={(e) => {
           e.stopPropagation();
-          setActiveBotTab(false);
+          setIsBotSidebarActive(false);
         }}
       >
         <NavBar />
         <MyBots
           activeTab={activeTab}
-          activeBotTab={activeBotTab}
+          isBotSidebarActive={isBotSidebarActive}
           setActiveTab={setActiveTab}
-          setActiveBotTab={setActiveBotTab}
+          setIsBotSidebarActive={setIsBotSidebarActive}
         />
       </main>
     </>
