@@ -5,7 +5,7 @@ interface Props {
 
 const BotsHeading: React.FC<Props> = ({ setIsBotSidebarActive }) => {
   return (
-    <div className="flex justify-between gap-4 sec-nav bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1 text-xs">
+    <div className="flex justify-between gap-4 bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1 text-xs">
       <h2 className="text-xl font-bold flex gap-4 grow">
         <span className="my-auto">My Bots</span>
         <span className="bg-dark-3 border border-light-1 rounded-md px-2 text-xs font-medium my-auto">
