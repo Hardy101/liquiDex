@@ -47,7 +47,7 @@ const AnalyticsDashboard: React.FC = () => {
             <p className="a-dashboard-info a-dashboard-info-p">
               <span className="text-grey-4 text-sm">Net Profit/Loss</span>
               <span className="text-sm text-green-300 font-bold">
-                3,222.33 ETH <i className="lni lni-arrow-upward rotate-45"></i>
+                3,222.33 ETH <i className="fa-solid fa-arrow-trend-up"></i>
               </span>
               <span className="text-green-300">+ 5.11%</span>
             </p>
@@ -79,7 +79,7 @@ const AnalyticsDashboard: React.FC = () => {
             <p className="a-dashboard-info-p">
               <span className="text-grey-4 text-sm">Maximum Drawdown</span>
               <span className="text-sm text-red-400 font-bold">
-                5,345.89 ETH<i className="lni lni-arrow-upward rotate-135"></i>
+                5,345.89 ETH <i className="fa-solid fa-arrow-trend-down"></i>
               </span>
               <span className="text-red-400">- 4.30%</span>
             </p>

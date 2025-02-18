@@ -7,22 +7,22 @@ const SettingsNavbar: React.FC = () => {
     {
       tab_id: "account",
       btn: "Your account",
-      icon: "lni lni-user-4 my-auto",
+      icon: "fa-solid fa-user my-auto",
     },
     {
       tab_id: "security",
       btn: "Security",
-      icon: "lni lni-locked-1 my-auto",
+      icon: "fa-solid fa-lock my-auto",
     },
     {
       tab_id: "platform",
       btn: "Platform",
-      icon: "lni lni-knife-fork-1 my-auto",
+      icon: "fa-solid fa-screwdriver-wrench my-auto",
     },
     {
       tab_id: "subscription",
       btn: "Subscription",
-      icon: "lni lni-shield-2-check my-auto",
+      icon: "fa-solid fa-shield-halved my-auto",
     },
   ];
   return (

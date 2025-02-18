@@ -10,22 +10,22 @@ const BotsNavBar: React.FC<Props> = ({ activeTab, setActiveTab }) => {
     {
       tab_id: "start",
       btn: "Quick Start Guide",
-      icon: "lni lni-bolt-2 my-auto",
+      icon: "fa-solid fa-bolt-lightning my-auto",
     },
     {
       tab_id: "mybots",
       btn: "My Bots",
-      icon: "lni lni-trend-up-1 my-auto",
+      icon: "fa-solid fa-arrow-trend-up my-auto",
     },
     {
       tab_id: "backtesting",
       btn: "Backtesting",
-      icon: "lni lni-trend-up-1 my-auto",
+      icon: "fa-solid fa-arrow-trend-up my-auto",
     },
     {
       tab_id: "analytics",
       btn: "Analytics",
-      icon: "lni lni-search-2 my-auto",
+      icon: "fa-solid fa-magnifying-glass my-auto",
     },
   ];
   return (

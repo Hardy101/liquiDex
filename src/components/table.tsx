@@ -26,8 +26,8 @@ const Table: React.FC = () => {
         <tbody>
           <tr>
             <td className="p-2 flex gap-2">
-              <span className="text-xl my-auto bg-black rounded-md p-2 my-auto">
-                <i className="lni lni-android m-auto"></i>
+              <span className="text-sm my-auto bg-black rounded-md p-2 my-auto">
+                <i className="fa-solid fa-robot my-auto"></i>
               </span>
 
               <p className="my-auto grid gap-1">
@@ -46,22 +46,22 @@ const Table: React.FC = () => {
             <td>
               <ActionToggleBtn defaultState={true} />
             </td>
-            <td className="text-lg flex gap-1">
+            <td className="text-md flex gap-2">
               <button className="my-auto">
-                <i className="lni lni-gear-1"></i>
+                <i className="fa-solid fa-gear"></i>
               </button>
               <button className="my-auto">
-                <i className="lni lni-clipboard"></i>
+                <i className="fa-regular fa-clipboard"></i>
               </button>
               <button className="my-auto">
-                <i className="lni lni-trash-3"></i>
+                <i className="fa-solid fa-trash"></i>
               </button>
             </td>
           </tr>
           <tr className="bg-dark-2">
             <td className="p-2 flex gap-2">
-              <span className="text-xl my-auto bg-black rounded-md p-2 my-auto">
-                <i className="lni lni-android m-auto"></i>
+              <span className="text-sm my-auto bg-black rounded-md p-2 my-auto">
+                <i className="fa-solid fa-robot my-auto"></i>
               </span>
 
               <p className="my-auto grid gap-1">
@@ -80,15 +80,15 @@ const Table: React.FC = () => {
             <td>
               <ActionToggleBtn defaultState={false} />
             </td>
-            <td className="text-lg flex gap-1">
+            <td className="text-md flex gap-2">
               <button className="my-auto">
-                <i className="lni lni-gear-1"></i>
+                <i className="fa-solid fa-gear"></i>
               </button>
               <button className="my-auto">
-                <i className="lni lni-clipboard"></i>
+                <i className="fa-regular fa-clipboard"></i>
               </button>
               <button className="my-auto">
-                <i className="lni lni-trash-3"></i>
+                <i className="fa-solid fa-trash"></i>
               </button>
             </td>
           </tr>
@@ -96,7 +96,7 @@ const Table: React.FC = () => {
       </table>
       <div className="flex justify-between w-full text-xs bg-dark-2 rounded-b-xl text-grey-4 py-1">
         <button className="flex gap-2 p-2">
-          <i className="lni lni-arrow-left my-auto"></i>
+          <i className="fa-solid fa-arrow-left my-auto"></i>
           <span className="my-auto">Previous</span>
         </button>
         <button className="grow justify-center flex gap-2">
@@ -105,7 +105,7 @@ const Table: React.FC = () => {
         </button>
         <button className="flex gap-2 p-2">
           <span className="my-auto">Next</span>
-          <i className="lni lni-arrow-right my-auto"></i>
+          <i className="fa-solid fa-arrow-right my-auto"></i>
         </button>
       </div>
     </div>

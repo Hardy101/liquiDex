@@ -32,16 +32,16 @@ const CreateNewBot = forwardRef<HTMLDivElement, Props>(
         <div className="flex justify-between border-b-2 border-grey-3 p-4">
           <p className="text-sm flex flex-col gap-1">
             <span className="flex gap-2 text-xl">
-              <i className="lni lni-android my-auto"></i>
+              <i className="fa-solid fa-robot my-auto text-lg"></i>
               <span className="text-sm my-auto">Create New Bot</span>
             </span>
             <span className="text-xs">Create and set the bot up</span>
           </p>
           <button
-            className="gradient-1 p-1 rounded-md flex text-black cursor-pointer  my-auto"
+            className="gradient-1 px-2 py-1 rounded-md flex text-black cursor-pointer  my-auto"
             onClick={() => setActiveBotTab(false)}
           >
-            <i className="lni lni-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           </button>
         </div>
         <div className="p-4">

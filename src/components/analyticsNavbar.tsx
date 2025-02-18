@@ -9,12 +9,12 @@ const secnavbtn = [
   {
     id: "dashboard",
     txt: "Statistics Dashboard",
-    icon: "lni lni-trend-up-1 my-auto",
+    icon: "fa-solid fa-chart-simple my-auto",
   },
   {
     id: "history",
     txt: "Trade History",
-    icon: "lni lni-clipboard my-auto",
+    icon: "fa-solid fa-clock-rotate-left my-auto",
   },
 ];
 

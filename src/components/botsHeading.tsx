@@ -17,7 +17,7 @@ const BotsHeading: React.FC<Props> = ({ activeBotTab, setActiveBotTab }) => {
         action="#"
         className="flex border border-grey-3 bg-dark-1 rounded-md pl-2 py-1 my-auto"
       >
-        <i className="lni lni-search-1 my-auto"></i>
+        <i className="fa-solid fa-magnifying-glass my-auto"></i>
         <input
           type="text"
           name=""
@@ -43,7 +43,7 @@ const BotsHeading: React.FC<Props> = ({ activeBotTab, setActiveBotTab }) => {
           setActiveBotTab(true);
         }}
       >
-        <i className="lni lni-plus my-auto"></i>
+        <i className="fa-solid fa-plus my-auto"></i>
         <span className="my-auto">Create new bot</span>
       </button>
     </div>

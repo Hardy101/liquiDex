@@ -10,7 +10,7 @@ const NavBar: React.FC = () => {
           action="#"
           className="flex border border-grey-3 rounded-md pl-2 py-2 my-auto text-xs bg-dark-1"
         >
-          <i className="lni lni-search-1 my-auto"></i>
+          <i className="fa-solid fa-magnifying-glass my-auto"></i>
           <input
             type="text"
             name=""
@@ -26,7 +26,7 @@ const NavBar: React.FC = () => {
               to="/settings"
               className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex"
             >
-              <i className="lni lni-gear-1 m-auto"></i>
+              <i className="fa-solid fa-gear m-auto"></i>
             </Link>
           </li>
           <li>
@@ -34,7 +34,7 @@ const NavBar: React.FC = () => {
               to="#"
               className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex"
             >
-              <i className="lni lni-bell-1 m-auto"></i>
+              <i className="fa-solid fa-bell m-auto"></i>
             </Link>
           </li>
           <li>
@@ -42,7 +42,7 @@ const NavBar: React.FC = () => {
               to="#"
               className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex"
             >
-              <i className="lni lni-wallet-1 m-auto"></i>
+              <i className="fa-solid fa-wallet m-auto"></i>
             </Link>
           </li>
         </ul>

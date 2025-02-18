@@ -6,10 +6,10 @@ import Logo from "../assets/logo.png";
 
 const AsidesSection: React.FC = () => {
   const asides_nav_link = [
-    { icon: "lni lni-dashboard-square-1", path: "/", status: "not-active" },
-    { icon: "lni lni-android", path: "/bots", status: "not-active" },
-    { icon: "lni lni-database-2", path: "#", status: "not-active" },
-    { icon: "lni lni-bar-chart-4", path: "/analytics", status: "not-active" },
+    { icon: "fas fa-th", path: "/", status: "not-active" },
+    { icon: "fa-solid fa-robot", path: "/bots", status: "not-active" },
+    { icon: "fa-solid fa-database", path: "#", status: "not-active" },
+    { icon: "fa-solid fa-chart-simple", path: "/analytics", status: "not-active" },
   ];
 
   return (
@@ -19,11 +19,11 @@ const AsidesSection: React.FC = () => {
           <a>
             <img src={Logo} alt="logo" className="w-8" />
           </a>
-          <ul className="grow mx-auto text-xl flex flex-col gap-3">
+          <ul className="grow mx-auto text-lg flex flex-col gap-3">
             {asides_nav_link.map(({ icon, path, status }, index) => {
               const isActive = location.pathname === path ? "active" : status;
               return (
-                <li key={index} className={isActive}>
+                <li key={index} className={`mx-auto ${isActive}`}>
                   <Link to={path} className="flex p-1">
                     <i className={icon}></i>
                   </Link>
@@ -32,20 +32,20 @@ const AsidesSection: React.FC = () => {
             })}
           </ul>
 
-          <ul className="mx-auto text-xl grid gap-3">
-            <li>
+          <ul className="mx-auto text-md grid gap-3">
+            <li className="mx-auto">
               <a>
-                <i className="lni lni-gear-1"></i>
+                <i className="fa-solid fa-gear"></i>
               </a>
             </li>
-            <li>
+            <li className="mx-auto">
               <a>
-                <i className="lni lni-question-mark-circle"></i>
+              <i className="fa-solid fa-question"></i>
               </a>
             </li>
-            <li>
+            <li className="mx-auto">
               <a>
-                <i className="lni lni-enter"></i>
+              <i className="fa-solid fa-right-to-bracket"></i>
               </a>
             </li>
           </ul>

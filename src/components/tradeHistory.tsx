@@ -77,7 +77,7 @@ const TradeHistory: React.FC = () => {
             action="#"
             className="flex border border-grey-3 rounded-md pl-2 py-2 my-auto text-xs bg-dark-1 w-2/5"
           >
-            <i className="lni lni-search-1 my-auto"></i>
+            <i className="fa-solid fa-magnifying-glass my-auto"></i>
             <input
               type="text"
               name=""
@@ -167,7 +167,7 @@ const TradeHistory: React.FC = () => {
         </table>
         <div className="flex justify-between w-full text-xs bg-dark-2 rounded-b-xl text-grey-4 py-1">
           <button className="flex gap-2 p-2">
-            <i className="lni lni-arrow-left my-auto"></i>
+            <i className="fa-solid fa-arrow-left my-auto"></i>
             <span className="my-auto">Previous</span>
           </button>
           <button className="grow justify-center flex gap-2">
@@ -176,7 +176,7 @@ const TradeHistory: React.FC = () => {
           </button>
           <button className="flex gap-2 p-2">
             <span className="my-auto">Next</span>
-            <i className="lni lni-arrow-right my-auto"></i>
+            <i className="fa-solid fa-arrow-right my-auto"></i>
           </button>
         </div>
       </div>
