@@ -39,6 +39,28 @@ const MyBots: React.FC<Props> = ({
       });
     }
   }, [activeBotTab]);
+  const secnavbtn = [
+    {
+      tab_id: "start",
+      btn: "Quick Start Guide",
+      icon: "fa-solid fa-bolt-lightning my-auto",
+    },
+    {
+      tab_id: "mybots",
+      btn: "My Bots",
+      icon: "fa-solid fa-arrow-trend-up my-auto",
+    },
+    {
+      tab_id: "backtesting",
+      btn: "Backtesting",
+      icon: "fa-solid fa-arrow-trend-up my-auto",
+    },
+    {
+      tab_id: "analytics",
+      btn: "Analytics",
+      icon: "fa-solid fa-magnifying-glass my-auto",
+    },
+  ];
   return (
     <>
       <div className="px-8 mt-8 grid gap-8 pb-8">
@@ -47,12 +69,15 @@ const MyBots: React.FC<Props> = ({
           activeBotTab={activeBotTab}
           setActiveBotTab={setActiveBotTab}
         />
-        <BotsNavBar activeTab={activeTab} setActiveTab={setActiveTab} />
+        <BotsNavBar
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          secnavbtn={secnavbtn}
+        />
         <BotsHeading
           activeBotTab={activeBotTab}
           setActiveBotTab={setActiveBotTab}
         />
-
         <Table />
       </div>
     </>
