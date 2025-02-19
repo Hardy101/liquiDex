@@ -20,9 +20,10 @@ const BotAnalytics: React.FC = () => {
           className="w-1/2 flex flex-col gap-2 text-xs bg-dark-2 border border-grey-3 rounded-xl p-3"
         >
           <h2 className="text-xl font-bold">Asset Analysis</h2>
-          <div className="form-control flex justify-between pb-2">
+          <div className="relative form-control flex justify-between pb-2">
+           
             <label htmlFor="asset" className="text-grey-2 my-auto">
-              Ticker
+              Crypto Name / Ticker
             </label>
             <input
               type="text"
@@ -30,14 +31,14 @@ const BotAnalytics: React.FC = () => {
               id="ticker"
               value={formData.ticker.toUpperCase()}
               onChange={handleChange}
-              placeholder="Enter asset ID / ticker"
+              placeholder="Enter asset Name / ticker"
               className="w-3/5 bg-dark-1 rounded-md border border-grey-3 p-2 outline-none my-auto"
             />
           </div>
           <div className="form-control flex justify-between pb-2">
             <select
-              name=""
-              id=""
+              name="timeframe"
+              id="timeframe"
               className="w-full bg-dark-1 rounded-md border border-grey-3 p-2 outline-none my-auto"
             >
               <option value="">Time frame</option>
@@ -47,8 +48,8 @@ const BotAnalytics: React.FC = () => {
           </div>
           <div className="form-control flex justify-between pb-2">
             <select
-              name=""
-              id=""
+              name="botname"
+              id="botname"
               className="w-full bg-dark-1 rounded-md border border-grey-3 p-2 outline-none my-auto"
             >
               <option value="">Bot</option>
@@ -57,8 +58,8 @@ const BotAnalytics: React.FC = () => {
           </div>
           <div className="form-control flex justify-between pb-2">
             <select
-              name=""
-              id=""
+              name="markettype"
+              id="markettype"
               className="w-full bg-dark-1 rounded-md border border-grey-3 p-2 outline-none my-auto"
             >
               <option value="">Market</option>
@@ -68,8 +69,8 @@ const BotAnalytics: React.FC = () => {
           </div>
           <div className="form-control pb-2">
             <select
-              name=""
-              id=""
+              name="tradetype"
+              id="tradetype"
               className="w-full bg-dark-1 rounded-md border border-grey-3 p-2 outline-none my-auto"
             >
               <option value="">Trade Type</option>
@@ -131,8 +132,9 @@ const BotAnalytics: React.FC = () => {
             </p>
           </div>
           <p className="mt-2 text-grey-2 italic">
-            New to Analytics? Click <span className="underline text-blue-500">here</span> to explore the icons and see what’s
-            going on.
+            New to Analytics? Click{" "}
+            <span className="underline text-blue-500">here</span> to explore the
+            icons and see what's going on.
           </p>
         </div>
       </div>
@@ -141,3 +143,52 @@ const BotAnalytics: React.FC = () => {
 };
 
 export default BotAnalytics;
+
+// my_project/
+// │
+// ├── backend/                  # Django backend
+// │   ├── manage.py
+// │   ├── requirements.txt      # Python dependencies
+// │   ├── my_backend/           # Django project directory
+// │   │   ├── __init__.py
+// │   │   ├── asgi.py
+// │   │   ├── settings.py
+// │   │   ├── urls.py
+// │   │   ├── wsgi.py
+// │   │
+// │   └── apps/                 # Your Django apps
+// │       ├── __init__.py
+// │       ├── api/              # Example app for API endpoints
+// │       │   ├── migrations/
+// │       │   ├── models.py
+// │       │   ├── serializers.py
+// │       │   ├── views.py
+// │       │   ├── urls.py
+// │       │   └── tests.py
+// │
+// ├── frontend/                 # React frontend
+// │   ├── public/
+// │   ├── src/
+// │   │   ├── components/
+// │   │   ├── pages/
+// │   │   ├── services/         # API calls to Django backend
+// │   │   ├── App.js
+// │   │   └── index.js
+// │   ├── package.json
+// │   └── vite.config.js        # If using Vite (recommended for React speed)
+// │
+// └── README.md
+{/* <div className="absolute w-3/5 right-0 top-10 rounded-md bg-black border border-grey-3">
+<div className="flex flex-col gap-2">
+  <p className="grid grid-cols-3 px-3 py-1 bg-dark-1">
+    <span>ID</span>
+    <span>Symbol</span>
+    <span>Name</span>
+  </p>
+  <p className="grid grid-cols-3 px-3 py-1">
+    <span>BTC</span>
+    <span>BTC</span>
+    <span>Bitcoin</span>
+  </p>
+</div>
+</div> */}
