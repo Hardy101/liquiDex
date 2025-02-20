@@ -9,6 +9,7 @@ const ActionToggleBtn: React.FC<Props> = ({ defaultState }) => {
 
   return (
     <button
+      type="button"
       className="flex gap-2 bg-dark-2 border-grey-3 py-1 px-3 rounded-md"
       onClick={() => setIsActive((prev) => !prev)}
     >

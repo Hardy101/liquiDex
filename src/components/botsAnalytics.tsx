@@ -1,4 +1,5 @@
 import { useState } from "react";
+import cryptoDataHandler from "../services/cryptoDataHandler";
 
 interface FormData {
   ticker: string;
@@ -6,10 +7,13 @@ interface FormData {
 
 const BotAnalytics: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({ ticker: "" });
+  const [coinId, setCoinId] = useState("");
+  const [days, setDays] = useState("1");
+  const { data, loading, error } = cryptoDataHandler(coinId, days);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
-
+    setCoinId(value);
     setFormData({ ...formData, [name]: value });
   };
   return (
@@ -21,7 +25,6 @@ const BotAnalytics: React.FC = () => {
         >
           <h2 className="text-xl font-bold">Asset Analysis</h2>
           <div className="relative form-control flex justify-between pb-2">
-           
             <label htmlFor="asset" className="text-grey-2 my-auto">
               Crypto Name / Ticker
             </label>
@@ -29,7 +32,7 @@ const BotAnalytics: React.FC = () => {
               type="text"
               name="ticker"
               id="ticker"
-              value={formData.ticker.toUpperCase()}
+              value={formData.ticker}
               onChange={handleChange}
               placeholder="Enter asset Name / ticker"
               className="w-3/5 bg-dark-1 rounded-md border border-grey-3 p-2 outline-none my-auto"
@@ -88,54 +91,60 @@ const BotAnalytics: React.FC = () => {
           </div>
         </form>
         <div className="w-1/2 bg-dark-2 border border-grey-3 rounded-xl p-3">
-          <h2 className="text-xl mb-2">TON/USDT</h2>
-          <p className="flex gap-4">
-            <button className="flex gap-2">
-              <span className="bg-dark-1 py-1 px-2 border border-grey-3 rounded-md text-green-500 my-auto">
-                <i className="fa-solid fa-arrow-up"></i>
-              </span>
-              <span className="my-auto">Long</span>
-            </button>
-            <button className="flex gap-2">
-              <span className="bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
-                <i className="fa-solid fa-bullseye"></i>
-              </span>
-              <span className="my-auto">30-50%</span>
-            </button>
-          </p>
-          <div className="mt-4 relative flex gap-4">
-            <span className="bg-dark-1 py-1 px-2 border border-grey-3 rounded-md text-red-400">
-              <i className="fa-solid fa-triangle-exclamation my-auto"></i>
-            </span>
-            <div className="w-full h-2 bg-blue-300 rounded-md my-auto"></div>
-            <span className="my-auto font-bold">70%</span>
-          </div>
-          <div className="mt-4 relative flex gap-4">
-            <button className="bg-dark-1 py-1 px-2 border border-grey-3 rounded-md text-blue-400">
-              <i className="fa-solid fa-dice-two my-auto"></i>
-            </button>
-            <div className="w-1/2 h-2 bg-blue-300 rounded-md my-auto"></div>
-            <span className="my-auto font-bold">50%</span>
-          </div>
-          <div className="mt-6 text-md flex gap-4">
-            <p className="flex gap-2">
-              <span className="my-auto">Take Profit</span>
-              <span className="my-auto bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
-                $5.9
-              </span>
-            </p>
-            <p className="flex gap-2">
-              <span className="my-auto">Stop Loss</span>
-              <span className="my-auto bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
-                $2.9
-              </span>
-            </p>
-          </div>
-          <p className="mt-2 text-grey-2 italic">
-            New to Analytics? Click{" "}
-            <span className="underline text-blue-500">here</span> to explore the
-            icons and see what's going on.
-          </p>
+          {loading && <p>Loading historical data...</p>}
+          {error && <p className="text-red-500">{error}</p>}
+          {data && (
+            <div>
+              <h2 className="text-xl mb-2">{coinId}</h2>
+              <p className="flex gap-4">
+                <button className="flex gap-2">
+                  <span className="bg-dark-1 py-1 px-2 border border-grey-3 rounded-md text-green-500 my-auto">
+                    <i className="fa-solid fa-arrow-up"></i>
+                  </span>
+                  <span className="my-auto">Long</span>
+                </button>
+                <button className="flex gap-2">
+                  <span className="bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
+                    <i className="fa-solid fa-bullseye"></i>
+                  </span>
+                  <span className="my-auto">30-50%</span>
+                </button>
+              </p>
+              <div className="mt-4 relative flex gap-4">
+                <span className="bg-dark-1 py-1 px-2 border border-grey-3 rounded-md text-red-400">
+                  <i className="fa-solid fa-triangle-exclamation my-auto"></i>
+                </span>
+                <div className="w-full h-2 bg-blue-300 rounded-md my-auto"></div>
+                <span className="my-auto font-bold">70%</span>
+              </div>
+              <div className="mt-4 relative flex gap-4">
+                <button className="bg-dark-1 py-1 px-2 border border-grey-3 rounded-md text-blue-400">
+                  <i className="fa-solid fa-dice-two my-auto"></i>
+                </button>
+                <div className="w-1/2 h-2 bg-blue-300 rounded-md my-auto"></div>
+                <span className="my-auto font-bold">50%</span>
+              </div>
+              <div className="mt-6 text-md flex gap-4">
+                <p className="flex gap-2">
+                  <span className="my-auto">Take Profit</span>
+                  <span className="my-auto bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
+                    $5.9
+                  </span>
+                </p>
+                <p className="flex gap-2">
+                  <span className="my-auto">Stop Loss</span>
+                  <span className="my-auto bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
+                    $2.9
+                  </span>
+                </p>
+              </div>
+              <p className="mt-2 text-grey-2 italic">
+                New to Analytics? Click{" "}
+                <span className="underline text-blue-500">here</span> to explore
+                the icons and see what's going on.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </>
@@ -178,7 +187,8 @@ export default BotAnalytics;
 // │   └── vite.config.js        # If using Vite (recommended for React speed)
 // │
 // └── README.md
-{/* <div className="absolute w-3/5 right-0 top-10 rounded-md bg-black border border-grey-3">
+{
+  /* <div className="absolute w-3/5 right-0 top-10 rounded-md bg-black border border-grey-3">
 <div className="flex flex-col gap-2">
   <p className="grid grid-cols-3 px-3 py-1 bg-dark-1">
     <span>ID</span>
@@ -191,4 +201,5 @@ export default BotAnalytics;
     <span>Bitcoin</span>
   </p>
 </div>
-</div> */}
+</div> */
+}

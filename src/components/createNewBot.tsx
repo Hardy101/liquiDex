@@ -1,5 +1,7 @@
 import { forwardRef, useState } from "react";
 
+import ActionToggleBtn from "./actionToggleBtn";
+
 interface Props {
   isBotSidebarActive: boolean;
   setIsBotSidebarActive: (tab: boolean) => void;
@@ -65,15 +67,7 @@ const CreateNewBot = forwardRef<HTMLDivElement, Props>(
             </div>
             <div className="form-control flex justify-between pb-2 border-b-2 border-grey-3">
               <label className="text-grey-2 my-auto">Status</label>
-              <button
-                type="button"
-                className="w-2/5 flex gap-2 bg-dark-2 border-grey-3 py-1 px-3 rounded-md"
-              >
-                <span className="my-auto">Off</span>
-                <span className="inline-block bg-grey-2 rounded-2xl relative w-5 h-3 my-auto">
-                  <span className="absolute left-0 top-0 w-3 h-full bg-white rounded-2xl"></span>
-                </span>
-              </button>
+              <ActionToggleBtn />
             </div>
             <div className="form-control flex justify-between pb-2 border-b-2 border-grey-3">
               <label htmlFor="select" className="text-grey-2 my-auto">
