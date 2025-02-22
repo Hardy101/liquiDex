@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavBar: React.FC = () => {
+  const navbarlinks = [
+    { icon: "fa-solid fa-gear", path: "/settings", status: "not-active" },
+    { icon: "fa-solid fa-bell", path: "/notifications", status: "not-active" },
+    { icon: "fa-solid fa-wallet", path: "#", status: "not-active" },
+  ];
   return (
     <>
       <nav className="flex gap-8 px-8 py-4 bg-dark-2 text-light-1">
@@ -21,30 +26,18 @@ const NavBar: React.FC = () => {
         </form>
 
         <ul className="flex gap-4 my-auto text-sm">
-          <li>
-            <Link
-              to="/settings"
-              className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex"
-            >
-              <i className="fa-solid fa-gear m-auto"></i>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/notifications"
-              className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex"
-            >
-              <i className="fa-solid fa-bell m-auto"></i>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="#"
-              className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex"
-            >
-              <i className="fa-solid fa-wallet m-auto"></i>
-            </Link>
-          </li>
+          {navbarlinks.map(({ icon, path, status }, index) => {
+            const isActive = location.pathname === path ? "active" : status;
+            return (
+              <Link
+                key={index}
+                to={path}
+                className={`bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex ${isActive}`}
+              >
+                <i className={`${icon} m-auto`}></i>
+              </Link>
+            );
+          })}
         </ul>
       </nav>
     </>
