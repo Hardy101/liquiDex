@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 
-const SettingsNavbar: React.FC = () => {
-  const [activeTab, setActiveTab] = useState("account");
+interface ActiveTabProps {
+  activeTab: string;
+  setActiveTab: (tab: string) => void;
+}
 
+const SettingsNavbar: React.FC<ActiveTabProps> = ({
+  activeTab,
+  setActiveTab,
+}) => {
   const secnavbtn = [
     {
       tab_id: "account",
@@ -21,7 +27,7 @@ const SettingsNavbar: React.FC = () => {
     },
   ];
   return (
-    <div className="sec-nav bg-dark-2 border border-grey-3 rounded-xl p-3">
+    <div className="bg-dark-2 border border-grey-3 rounded-xl p-3">
       <ul
         className={`navlinks rounded-md text-grey-2 font-bold text-xs text-center grid grid-cols-${secnavbtn.length} bg-dark-1 p-1`}
       >

@@ -46,6 +46,15 @@ button {
     rgba(123, 123, 123, 1) 100%
   );
 }
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
 /* Fonts */
 @font-face {
   font-family: poppins-regular;
