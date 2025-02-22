@@ -7,19 +7,16 @@ import Logo from "../assets/logo.png";
 const NotificationDiv: React.FC = () => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const [isSidebarActive, setIsSidebarActive] = useState(false);
+
   return (
     <>
       <div className="grid gap-4">
-        <PageHeading
-          isSidebarActive={isSidebarActive}
-          setIsSidebarActive={setIsSidebarActive}
-        />
         <div className="bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1">
           <p className="notification flex justify-between">
-            <h2 className="flex gap-2">
+            <span className="flex gap-2">
               <img src={Logo} alt="logo" className="w-4 my-auto" />
               <span className="font-bold text-sm my-auto">Analysis Alert</span>
-            </h2>
+            </span>
             <span className="text-grey-4 text-xs font-bold">5:09 PM</span>
           </p>
 
@@ -34,10 +31,10 @@ const NotificationDiv: React.FC = () => {
         </div>
         <div className="bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1">
           <p className="notification flex justify-between">
-            <h2 className="flex gap-2">
+            <span className="flex gap-2">
               <img src={Logo} alt="logo" className="w-4 my-auto" />
               <span className="font-bold text-sm my-auto">System Alert</span>
-            </h2>
+            </span>
             <span className="text-grey-4 text-xs font-bold">5:20 PM</span>
           </p>
 
