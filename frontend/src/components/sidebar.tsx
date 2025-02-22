@@ -11,7 +11,7 @@ interface FormData {
   botname: string;
 }
 
-const CreateNewBot = forwardRef<HTMLDivElement, Props>(
+const Sidebar = forwardRef<HTMLDivElement, Props>(
   ({ setIsSidebarActive }, ref) => {
     const [formData, setFormData] = useState<FormData>({ botname: "" });
 
@@ -96,4 +96,4 @@ const CreateNewBot = forwardRef<HTMLDivElement, Props>(
   }
 );
 
-export default CreateNewBot;
+export default Sidebar;

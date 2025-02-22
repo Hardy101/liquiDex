@@ -1,4 +1,4 @@
-import ActionToggleBtn from "./actionToggleBtn";
+import ActionToggleBtn from "./minicomponents/actionToggleBtn";
 
 const SettingsPlatform: React.FC = () => {
   const themebuttons = [

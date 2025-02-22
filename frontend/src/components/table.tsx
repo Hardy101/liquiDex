@@ -1,5 +1,5 @@
 import React from "react";
-import ActionToggleBtn from "./actionToggleBtn";
+import ActionToggleBtn from "./minicomponents/actionToggleBtn";
 
 const Table: React.FC = () => {
   return (
