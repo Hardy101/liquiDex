@@ -14,7 +14,7 @@ const Settings: React.FC = () => {
         <NavBar />
         <div className="body p-8 grid gap-8">
           <SettingsNavbar activeTab={activeTab} setActiveTab={setActiveTab} />
-          {activeTab == "account" && <SettingsPlatform />}
+          {activeTab == "platform" && <SettingsPlatform />}
         </div>
       </main>
     </>
