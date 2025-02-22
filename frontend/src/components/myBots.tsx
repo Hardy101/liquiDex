@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 
 import CreateNewBot from "./createNewBot";
 import Table from "./table";
-import BotsNavBar from "./botsNavbar";
 import BotsHeading from "./botsHeading";
 
 import gsap from "gsap";
@@ -44,8 +43,8 @@ const MyBots: React.FC<Props> = ({
     <>
       <CreateNewBot
         ref={sidebarRef}
-        isBotSidebarActive={isBotSidebarActive}
-        setIsBotSidebarActive={setIsBotSidebarActive}
+        isSidebarActive={isBotSidebarActive}
+        setIsSidebarActive={setIsBotSidebarActive}
       />
 
       <BotsHeading

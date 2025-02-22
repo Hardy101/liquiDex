@@ -31,7 +31,7 @@ const NavBar: React.FC = () => {
           </li>
           <li>
             <Link
-              to="#"
+              to="/notifications"
               className="bg-dark-1 border-1 border-dark-3 rounded-lg p-2 flex"
             >
               <i className="fa-solid fa-bell m-auto"></i>

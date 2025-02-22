@@ -5,6 +5,7 @@ import Bots from "./pages/bots";
 import Dashboard from "./pages/dashboard";
 import Analytics from "./pages/analytics";
 import Settings from "./pages/settings";
+import Notifications from "./pages/notifications";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/bots" element={<Bots />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/notifications" element={<Notifications />} />
         </Routes>
       </Router>
     </>

@@ -140,31 +140,13 @@ const BotAnalytics: React.FC = () => {
                   <span className="my-auto">30-50%</span>
                 </span>
               </p>
-              <div className="mt-4 relative flex gap-4">
-                <span className="bg-dark-1 py-1 px-2 border border-grey-3 rounded-md text-red-400">
-                  <i className="fa-solid fa-triangle-exclamation my-auto"></i>
-                </span>
-                <div className="w-full h-2 bg-blue-300 rounded-md my-auto"></div>
-                <span className="my-auto font-bold">
-                  {coindata[1].toFixed(2)}%
-                </span>
-              </div>
-              <div className="mt-4 relative flex gap-4">
-                <button className="bg-dark-1 py-1 px-2 border border-grey-3 rounded-md text-blue-400">
-                  <i className="fa-solid fa-dice-two my-auto"></i>
-                </button>
-                <div
-                  className={`w-1/2 ${
-                    Number(coindata[2].toFixed(0)) > 50
-                      ? "bg-blue-300"
-                      : "bg-red-300"
-                  } h-2 rounded-md my-auto`}
-                ></div>
-                <span className="my-auto font-bold">
-                  {coindata[2].toFixed(0)}%
-                </span>
-              </div>
               <div className="mt-6 text-md flex gap-4">
+                <p className="flex gap-2">
+                  <span className="my-auto">Risk </span>
+                  <span className="my-auto bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
+                    {coindata[1].toFixed(0)}%
+                  </span>
+                </p>
                 <p className="flex gap-2">
                   <span className="my-auto">Take Profit</span>
                   <span className="my-auto bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
@@ -192,38 +174,3 @@ const BotAnalytics: React.FC = () => {
 };
 
 export default BotAnalytics;
-
-// my_project/
-// │
-// ├── backend/                  # Django backend
-// │   ├── manage.py
-// │   ├── requirements.txt      # Python dependencies
-// │   ├── my_backend/           # Django project directory
-// │   │   ├── __init__.py
-// │   │   ├── asgi.py
-// │   │   ├── settings.py
-// │   │   ├── urls.py
-// │   │   ├── wsgi.py
-// │   │
-// │   └── apps/                 # Your Django apps
-// │       ├── __init__.py
-// │       ├── api/              # Example app for API endpoints
-// │       │   ├── migrations/
-// │       │   ├── models.py
-// │       │   ├── serializers.py
-// │       │   ├── views.py
-// │       │   ├── urls.py
-// │       │   └── tests.py
-// │
-// ├── frontend/                 # React frontend
-// │   ├── public/
-// │   ├── src/
-// │   │   ├── components/
-// │   │   ├── pages/
-// │   │   ├── services/         # API calls to Django backend
-// │   │   ├── App.js
-// │   │   └── index.js
-// │   ├── package.json
-// │   └── vite.config.js        # If using Vite (recommended for React speed)
-// │
-// └── README.md

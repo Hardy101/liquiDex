@@ -3,8 +3,8 @@ import { forwardRef, useState } from "react";
 import ActionToggleBtn from "./actionToggleBtn";
 
 interface Props {
-  isBotSidebarActive: boolean;
-  setIsBotSidebarActive: (tab: boolean) => void;
+  isSidebarActive: boolean;
+  setIsSidebarActive: (tab: boolean) => void;
 }
 
 interface FormData {
@@ -12,7 +12,7 @@ interface FormData {
 }
 
 const CreateNewBot = forwardRef<HTMLDivElement, Props>(
-  ({ setIsBotSidebarActive }, ref) => {
+  ({ setIsSidebarActive }, ref) => {
     const [formData, setFormData] = useState<FormData>({ botname: "" });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -41,7 +41,7 @@ const CreateNewBot = forwardRef<HTMLDivElement, Props>(
           </p>
           <button
             className="gradient-1 px-2 py-1 rounded-md flex text-black cursor-pointer  my-auto"
-            onClick={() => setIsBotSidebarActive(false)}
+            onClick={() => setIsSidebarActive(false)}
           >
             <i className="fa-solid fa-xmark"></i>
           </button>
