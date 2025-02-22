@@ -1,6 +1,6 @@
 import { forwardRef, useState } from "react";
 
-import ActionToggleBtn from "./minicomponents/actionToggleBtn";
+import ActionToggleBtn from "./actionToggleBtn";
 
 interface Props {
   isSidebarActive: boolean;

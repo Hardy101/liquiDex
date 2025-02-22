@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import CreateNewBot from "./createNewBot";
+import CreateNewBot from "./minicomponents/createNewBot";
 import Table from "./table";
 import BotsHeading from "./botsHeading";
 
