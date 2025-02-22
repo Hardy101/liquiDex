@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import NavBar from "../components/navbar";
 import AsidesSection from "../components/aside";
 import SettingsNavbar from "../components/settingsNavbar";
-import SettingsHeading from "../components/settingsHeading";
+import SettingsPlatform from "../components/settingsPlatform";
 
 const Settings: React.FC = () => {
   const [activeTab, setActiveTab] = useState(false);
@@ -14,7 +14,7 @@ const Settings: React.FC = () => {
         <NavBar />
         <div className="body p-8 grid gap-8">
           <SettingsNavbar />
-          <SettingsHeading setActiveTab={setActiveTab} />
+          <SettingsPlatform />
         </div>
       </main>
     </>
