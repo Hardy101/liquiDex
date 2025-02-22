@@ -11,7 +11,7 @@ const SettingsPlatform: React.FC = () => {
         <h2 className="text-xl font-bold mb-2 flex gap-4 grow">
           Platform Settings
         </h2>
-        <p>Update your personal details and settings here</p>
+        <p>Update your system preferences and settings here</p>
       </div>
       <form action="#" className="grid gap-3 px-3 py-4">
         <div className="form-control flex justify-between border-b-2 border-dark-3 pb-4">
