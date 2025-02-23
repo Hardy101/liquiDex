@@ -5,6 +5,7 @@ import NavBar from "../components/navbar";
 import MyBots from "../components/myBots";
 import BotsNavBar from "../components/botsNavbar";
 import BotAnalytics from "../components/botsAnalytics";
+import ComingSoon from "../components/comingSoon";
 
 const Bots: React.FC = () => {
   const [isBotSidebarActive, setIsBotSidebarActive] = useState(false);
@@ -57,6 +58,8 @@ const Bots: React.FC = () => {
             />
           )}
           {activeTab == "analytics" && <BotAnalytics />}
+          {activeTab == "start" && <ComingSoon />}
+          {activeTab == "backtesting" && <ComingSoon />}
         </div>
       </main>
     </>

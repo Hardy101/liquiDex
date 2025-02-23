@@ -8,7 +8,7 @@ const AsidesSection: React.FC = () => {
   const asides_nav_link = [
     { icon: "fas fa-th", path: "/", status: "not-active" },
     { icon: "fa-solid fa-robot", path: "/bots", status: "not-active" },
-    { icon: "fa-solid fa-database", path: "#", status: "not-active" },
+    { icon: "fa-solid fa-database", path: "/database", status: "not-active" },
     { icon: "fa-solid fa-chart-simple", path: "/analytics", status: "not-active" },
   ];
 

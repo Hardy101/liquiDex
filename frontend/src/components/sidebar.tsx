@@ -18,6 +18,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
       title: "",
       message: "",
     });
+    let buttonstatus = false
     const handleChange = (
       e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
@@ -26,6 +27,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
     };
     const resetForm = () => {
       setFormData({ title: "", message: "" });
+      buttonstatus = false
     };
     return (
       <div
@@ -72,7 +74,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
               </label>
               <div className="flex flex-col gap-4">
                 <div className="inapp flex gap-2">
-                  <ActionToggleBtn />
+                  <ActionToggleBtn defaultState={buttonstatus}/>
                   <p className="flex flex-col gap-1">
                     <span className="my-auto">In app</span>
                     <span className="text-grey-4">
@@ -81,7 +83,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                   </p>
                 </div>
                 <div className="email flex gap-2">
-                  <ActionToggleBtn />
+                  <ActionToggleBtn defaultState={buttonstatus}/>
                   <p className="flex flex-col gap-1">
                     <span className="my-auto">Email Notifications</span>
                     <span className="text-grey-4">
