@@ -29,7 +29,7 @@ const SettingsNavbar: React.FC<ActiveTabProps> = ({
   return (
     <div className="bg-dark-2 border border-grey-3 rounded-xl p-3">
       <ul
-        className={`navlinks rounded-md text-grey-2 font-bold text-xs text-center grid grid-cols-${secnavbtn.length} bg-dark-1 p-1`}
+        className={`navlinks rounded-md text-grey-2 font-bold text-xs text-center grid grid-cols-3 bg-dark-1 p-1`}
       >
         {secnavbtn.map(({ tab_id, btn, icon }, index) => (
           <li key={index}>
