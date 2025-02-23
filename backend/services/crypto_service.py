@@ -33,3 +33,4 @@ def calculate_signal(data: dict):
         "take_profit": take_profit,
         "stop_loss": stop_loss,
     }
+ 

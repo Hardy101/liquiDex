@@ -12,10 +12,7 @@ const BotAnalytics: React.FC = () => {
   const [submittedCoin, setSubmittedCoin] = useState<string>(coinId);
   const [submittedDays, setSubmittedDays] = useState<string>(days);
 
-  const { coindata, loading, error } = useCryptoData(
-    submittedCoin,
-    submittedDays
-  );
+  const { data, loading, error } = useCryptoData(submittedCoin, submittedDays);
 
   // const [submittedData, setSubmittedData] = useState<any>(null);
 
@@ -113,50 +110,48 @@ const BotAnalytics: React.FC = () => {
             </p>
           )}
           {error && <p className="text-red-500">{error}</p>}
-          {coindata && !loading && !error && (
+          {data && !loading && !error && (
             <div>
               <h2 className="text-xl mb-2">{coinId}</h2>
               <p className="flex gap-4">
                 <span className="flex gap-2">
                   <span
                     className={`bg-dark-1 py-1 px-2 border border-grey-3 rounded-md text-${
-                      coindata[0] > 3 ? "green-500" : "red-500"
+                      data.position.toLocaleLowerCase() == 'short' ? "red-500" : "green-500"
                     } my-auto`}
                   >
                     <i
                       className={`fa-solid fa-arrow-${
-                        coindata[0] > 3 ? "up" : "down"
+                        data.position.toLocaleLowerCase() == "short" ? "down" : "up"
                       }`}
                     ></i>
                   </span>
-                  <span className="my-auto">
-                    {coindata[0] > 3 ? "long" : "short"}
-                  </span>
+                  <span className="my-auto">{data.position}</span>
                 </span>
                 <span className="flex gap-2">
                   <span className="bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
                     <i className="fa-solid fa-bullseye"></i>
                   </span>
-                  <span className="my-auto">30-50%</span>
+                  <span className="my-auto">{data.roi}%</span>
                 </span>
               </p>
               <div className="mt-6 text-md flex gap-4">
                 <p className="flex gap-2">
                   <span className="my-auto">Risk </span>
                   <span className="my-auto bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
-                    {coindata[1].toFixed(0)}%
+                    {data.risk}
                   </span>
                 </p>
                 <p className="flex gap-2">
                   <span className="my-auto">Take Profit</span>
                   <span className="my-auto bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
-                    ${coindata[3].toFixed(4)}
+                    ${data.take_profit.toFixed(4)}
                   </span>
                 </p>
                 <p className="flex gap-2">
                   <span className="my-auto">Stop Loss</span>
                   <span className="my-auto bg-dark-1 py-1 px-2 border border-grey-3 rounded-md">
-                    ${coindata[4].toFixed(4)}
+                    ${data.stop_loss.toFixed(4)}
                   </span>
                 </p>
               </div>
