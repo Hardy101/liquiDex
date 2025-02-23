@@ -2,7 +2,7 @@ interface Props {
   isSidebarActive: boolean;
   setIsSidebarActive: (tab: boolean) => void;
 }
-
+ 
 const PageHeading: React.FC<Props> = ({
   isSidebarActive,
   setIsSidebarActive,

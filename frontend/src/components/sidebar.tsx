@@ -13,14 +13,6 @@ interface FormData {
 
 const Sidebar = forwardRef<HTMLDivElement, Props>(
   ({ setIsSidebarActive }, ref) => {
-    const [formData, setFormData] = useState<FormData>({ botname: "" });
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-      const { name, value } = e.target;
-
-      setFormData({ ...formData, [name]: value });
-    };
-
     return (
       <div
         ref={ref}
@@ -32,24 +24,16 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between border-b-2 border-grey-3 p-4">
-          <p className="text-sm flex flex-col gap-1">
-            <span className="flex gap-2 text-xl">
-              <i className="fa-solid fa-robot my-auto text-lg"></i>
-              <span className="text-sm my-auto">Create New Bot</span>
-            </span>
-            <span className="text-xs">Create and set the bot up</span>
-          </p>
+          <h2 className="text-sm my-auto">Create Notification</h2>
           <button
-            className="gradient-1 px-2 py-1 rounded-md flex text-black cursor-pointer  my-auto"
+            className="gradient-1 px-2 py-1 rounded-md flex text-black cursor-pointer my-auto"
             onClick={() => setIsSidebarActive(false)}
           >
             <i className="fa-solid fa-xmark"></i>
           </button>
         </div>
         <div className="p-4">
-          <h1 className="mb-2 text-xl font-bold">
-            {formData.botname ? formData.botname : "BotName"}
-          </h1>
+          <h1 className="mb-2 text-xl font-bold">Notify</h1>
           <form action="#" className="flex flex-col gap-2 text-xs">
             <div className="form-control flex justify-between pb-2 border-b-2 border-grey-3">
               <label htmlFor="botname" className="text-grey-2 my-auto">
@@ -57,8 +41,6 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
               </label>
               <input
                 type="text"
-                value={formData.botname}
-                onChange={handleChange}
                 name="botname"
                 id="botname"
                 placeholder="Enter Bot Name"

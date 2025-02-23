@@ -1,13 +1,9 @@
-import React, { useRef, useState } from "react";
-import PageHeading from "./pageHeading";
+import React from "react";
 
 // Media
 import Logo from "../assets/logo.png";
 
 const NotificationDiv: React.FC = () => {
-  const sidebarRef = useRef<HTMLDivElement>(null);
-  const [isSidebarActive, setIsSidebarActive] = useState(false);
-
   return (
     <>
       <div className="grid gap-4">
