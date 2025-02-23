@@ -1,3 +1,4 @@
+/*
 import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 
@@ -74,3 +75,14 @@ const useCryptoData = (coinId: string, days: string) => {
 };
 
 export default useCryptoData;
+*/
+import axios from "axios";
+
+const fetchAnalysis = async (coinId: string, days: string) => {
+  const response = await axios.post("http://127.0.0.1:8000/api/analysis", {
+    coin_id: coinId,
+    days: days,
+  });
+  return response.data;
+};
+export default fetchAnalysis;
