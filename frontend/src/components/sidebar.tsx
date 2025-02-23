@@ -11,8 +11,14 @@ interface FormData {
   botname: string;
 }
 
+const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const { name, value } = e.target;
+  
+};
+
 const Sidebar = forwardRef<HTMLDivElement, Props>(
   ({ setIsSidebarActive }, ref) => {
+    
     return (
       <div
         ref={ref}
@@ -37,38 +43,69 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
           <form action="#" className="flex flex-col gap-2 text-xs">
             <div className="form-control flex justify-between pb-2 border-b-2 border-grey-3">
               <label htmlFor="botname" className="text-grey-2 my-auto">
-                Bot Name
+                Name
               </label>
               <input
                 type="text"
                 name="botname"
                 id="botname"
-                placeholder="Enter Bot Name"
-                className="w-2/5 bg-dark-1 rounded-md border border-grey-3 p-2 outline-none my-auto"
+                placeholder="Enter Notification Name"
+                className="w-3/5 bg-dark-1 rounded-md border border-grey-3 p-2 outline-none my-auto"
               />
             </div>
-            <div className="form-control flex justify-between pb-2 border-b-2 border-grey-3">
-              <label className="text-grey-2 my-auto">Status</label>
-              <ActionToggleBtn />
-            </div>
-            <div className="form-control flex justify-between pb-2 border-b-2 border-grey-3">
-              <label htmlFor="select" className="text-grey-2 my-auto">
-                Access
+            <div className="form-control flex flex-col gap-4 bg-dark-1 pb-2 border border-grey-3 rounded-md p-2">
+              <label className="text-grey-2 flex gap-2">
+                <i className="fa-solid fa-bell my-auto"></i>
+                <span className="my-auto">Notifications</span>
               </label>
-              <select
-                name=""
-                id=""
-                className="w-2/5 bg-dark-1 rounded-md border border-grey-3 p-2 outline-none my-auto"
-              >
-                <option value="select">Select</option>
-              </select>
+              <div className="flex flex-col gap-4">
+                <div className="inapp flex gap-2">
+                  <ActionToggleBtn />
+                  <p className="flex flex-col gap-1">
+                    <span className="my-auto">In app</span>
+                    <span className="text-grey-4">
+                      Keep tabs of all notifications in the notification page
+                    </span>
+                  </p>
+                </div>
+                <div className="email flex gap-2">
+                  <ActionToggleBtn />
+                  <p className="flex flex-col gap-1">
+                    <span className="my-auto">Email Notifications</span>
+                    <span className="text-grey-4">
+                      Recieve email notfifications.
+                    </span>
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="form-control mt-4">
+            <div className="form-control flex flex-col gap-4 bg-dark-1 pb-2 border border-grey-3 rounded-md p-2">
+              <div className="form-control grid gap-2">
+                <label htmlFor="message" className="text-grey-2 flex gap-2">
+                  <i className="fa-solid fa-message my-auto"></i>
+                  <span className="my-auto">Message</span>
+                </label>
+                <textarea
+                  name=""
+                  id=""
+                  className="bg-dark-2 w-full rounded-md outline-none p-2"
+                  placeholder="Write something..."
+                ></textarea>
+              </div>
+            </div>
+
+            <div className="form-control mt-4 flex gap-2">
+              <button
+                type="button"
+                className="bg-dark-1 py-2 px-4 rounded-md border border-grey-3 text-red-500"
+              >
+                <i className="fa-solid fa-brush rotate-45"></i>
+              </button>
               <button
                 type="button"
                 className="w-full gradient-1 p-2 rounded-md text-black"
               >
-                Add Bot
+                Add Notification
               </button>
             </div>
           </form>
