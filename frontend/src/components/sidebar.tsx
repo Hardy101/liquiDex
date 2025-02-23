@@ -8,17 +8,25 @@ interface Props {
 }
 
 interface FormData {
-  botname: string;
+  title: string;
+  message: string;
 }
-
-const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const { name, value } = e.target;
-  
-};
 
 const Sidebar = forwardRef<HTMLDivElement, Props>(
   ({ setIsSidebarActive }, ref) => {
-    
+    const [formData, setFormData] = useState<FormData>({
+      title: "",
+      message: "",
+    });
+    const handleChange = (
+      e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
+      const { name, value } = e.target;
+      setFormData({ ...formData, [name]: value });
+    };
+    const resetForm = () => {
+      setFormData({ title: "", message: "" });
+    };
     return (
       <div
         ref={ref}
@@ -39,16 +47,20 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
           </button>
         </div>
         <div className="p-4">
-          <h1 className="mb-2 text-xl font-bold">Notify</h1>
+          <h1 className="mb-2 text-xl font-bold">
+            {formData.title || "Notify"}
+          </h1>
           <form action="#" className="flex flex-col gap-2 text-xs">
             <div className="form-control flex justify-between pb-2 border-b-2 border-grey-3">
               <label htmlFor="botname" className="text-grey-2 my-auto">
                 Name
               </label>
               <input
-                type="text"
-                name="botname"
-                id="botname"
+                type="title"
+                name="title"
+                id="title"
+                onChange={handleChange}
+                value={formData.title}
                 placeholder="Enter Notification Name"
                 className="w-3/5 bg-dark-1 rounded-md border border-grey-3 p-2 outline-none my-auto"
               />
@@ -86,8 +98,10 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                   <span className="my-auto">Message</span>
                 </label>
                 <textarea
-                  name=""
-                  id=""
+                  name="message"
+                  id="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   className="bg-dark-2 w-full rounded-md outline-none p-2"
                   placeholder="Write something..."
                 ></textarea>
@@ -97,6 +111,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
             <div className="form-control mt-4 flex gap-2">
               <button
                 type="button"
+                onClick={resetForm}
                 className="bg-dark-1 py-2 px-4 rounded-md border border-grey-3 text-red-500"
               >
                 <i className="fa-solid fa-brush rotate-45"></i>

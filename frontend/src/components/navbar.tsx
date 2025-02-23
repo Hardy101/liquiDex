@@ -5,7 +5,7 @@ const NavBar: React.FC = () => {
   const navbarlinks = [
     { icon: "fa-solid fa-gear", path: "/settings", status: "not-active" },
     { icon: "fa-solid fa-bell", path: "/notifications", status: "not-active" },
-    { icon: "fa-solid fa-wallet", path: "#", status: "not-active" },
+    { icon: "fa-solid fa-wallet", path: "/wallet", status: "not-active" },
   ];
   return (
     <>

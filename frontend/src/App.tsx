@@ -6,6 +6,7 @@ import Dashboard from "./pages/dashboard";
 import Analytics from "./pages/analytics";
 import Settings from "./pages/settings";
 import Notifications from "./pages/notifications";
+import Wallet from "./pages/wallet";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/notifications" element={<Notifications />} />
+          <Route path="/wallet" element={<Wallet />} />
         </Routes>
       </Router>
     </>
