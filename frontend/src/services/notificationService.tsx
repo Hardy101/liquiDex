@@ -6,7 +6,7 @@ export const fetchNotifications = async () => {
   const response = await axios.get(API_URL);
   return response.data;
 };
-
+ 
 export const sendNotification = async (title: string, message: string) => {
   const response = await axios.post(API_URL, null, {
     params: { title, message },

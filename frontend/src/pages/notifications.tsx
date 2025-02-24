@@ -23,6 +23,9 @@ const Notifications = () => {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const sidebarRef = useRef<HTMLDivElement>(null);
+ 
+  console.log(notifications);
+  
 
   const loadNotifications = async () => {
     const data = await fetchNotifications();

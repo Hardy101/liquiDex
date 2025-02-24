@@ -10,24 +10,48 @@ interface Props {
 interface FormData {
   title: string;
   message: string;
+  inapp_type: boolean;
+  email_type: boolean;
 }
+
+type btn = "buttonA" | "buttonB";
+type ToggleField = keyof Pick<FormData, "inapp_type" | "email_type">;
 
 const Sidebar = forwardRef<HTMLDivElement, Props>(
   ({ setIsSidebarActive }, ref) => {
     const [formData, setFormData] = useState<FormData>({
       title: "",
       message: "",
+      inapp_type: false,
+      email_type: false,
     });
-    let buttonstatus = false
+
+    const handleToggle = (field: ToggleField) => {
+      setFormData((prev) => ({
+        ...prev,
+        [field]: !prev[field],
+      }));
+    };
+
     const handleChange = (
       e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
       const { name, value } = e.target;
       setFormData({ ...formData, [name]: value });
     };
+    const handleSubmit = (e: React.FormEvent) => {
+      e.preventDefault();
+      alert(
+        `${formData.email_type}\n${formData.inapp_type}\n${formData.title}\n${formData.message}`
+      );
+    };
     const resetForm = () => {
-      setFormData({ title: "", message: "" });
-      buttonstatus = true
+      setFormData({
+        title: "",
+        message: "",
+        inapp_type: false,
+        email_type: false,
+      });
     };
     return (
       <div
@@ -43,16 +67,21 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
           <h2 className="text-sm my-auto">Create Notification</h2>
           <button
             className="gradient-1 px-2 py-1 rounded-md flex text-black cursor-pointer my-auto"
-            onClick={() => setIsSidebarActive(false)}
+            onClick={() => handleToggle("inapp_type")}
           >
             <i className="fa-solid fa-xmark"></i>
           </button>
         </div>
         <div className="p-4">
           <h1 className="mb-2 text-xl font-bold">
-            {formData.title || "Notify"}
+            {formData.title || "<Notification Title>"}
           </h1>
-          <form action="#" className="flex flex-col gap-2 text-xs">
+          <form
+            action="#"
+            method="post"
+            className="flex flex-col gap-2 text-xs"
+            onSubmit={handleSubmit}
+          >
             <div className="form-control flex justify-between pb-2 border-b-2 border-grey-3">
               <label htmlFor="botname" className="text-grey-2 my-auto">
                 Name
@@ -63,7 +92,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                 id="title"
                 onChange={handleChange}
                 value={formData.title}
-                placeholder="Enter Notification Name"
+                placeholder="Enter Notification Title"
                 className="w-3/5 bg-dark-1 rounded-md border border-grey-3 p-2 outline-none my-auto"
               />
             </div>
@@ -74,20 +103,32 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
               </label>
               <div className="flex flex-col gap-4">
                 <div className="inapp flex gap-2">
-                
-                  <ActionToggleBtn defaultState={buttonstatus}/>
-                  <input type="hidden" name="inapp_type" value={String(buttonstatus)} />
+                  <ActionToggleBtn
+                    isButtonActive={formData.inapp_type}
+                    onClick={() => handleToggle("inapp_type")}
+                  />
+                  <input
+                    type="hidden"
+                    name="inapp_type"
+                    value={String(formData.inapp_type)}
+                  />
                   <p className="flex flex-col gap-1">
-                    
-                    <span className="my-auto">In app {String(buttonstatus)}</span>
+                    <span className="my-auto">In app</span>
                     <span className="text-grey-4">
                       Keep tabs of all notifications in the notification page
                     </span>
                   </p>
                 </div>
                 <div className="email flex gap-2">
-                  <ActionToggleBtn defaultState={buttonstatus}/>
-                  <input type="hidden" name="email_type" value={String(buttonstatus)} />
+                  <ActionToggleBtn
+                    isButtonActive={formData.email_type}
+                    onClick={() => handleToggle("email_type")}
+                  />
+                  <input
+                    type="hidden"
+                    name="email_type"
+                    value={String(isButtonActive.buttonB)}
+                  />
                   <p className="flex flex-col gap-1">
                     <span className="my-auto">Email Notifications</span>
                     <span className="text-grey-4">
@@ -123,7 +164,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                 <i className="fa-solid fa-brush rotate-45"></i>
               </button>
               <button
-                type="button"
+                type="submit"
                 className="w-full gradient-1 p-2 rounded-md text-black"
               >
                 Add Notification
