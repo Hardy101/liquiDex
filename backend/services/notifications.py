@@ -3,8 +3,8 @@ from sqlmodel import Session, select
 from models.schemas import Notification
 from datetime import datetime
 
-def create_notification(session: Session, title: str, msg: str, inapp:bool):
-    notification = Notification(title=title, message=msg, inapp_type=inapp)
+def create_notification(session: Session, title: str, msg: str, inapp:bool, email: bool):
+    notification = Notification(title=title, message=msg, inapp_type=inapp, email_type=email)
     session.add(notification)
     session.commit()
     session.refresh(notification)

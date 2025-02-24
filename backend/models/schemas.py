@@ -21,5 +21,5 @@ class Notification(SQLModel, table=True):
     title: str
     message: str
     inapp_type: Optional[bool] = Field(default=False)
-    emaii_type: Optional[bool] = Field(default=False)
+    email_type: Optional[bool] = Field(default=False)
     created_at: datetime = Field(default_factory=datetime.now)
