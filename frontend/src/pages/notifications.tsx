@@ -9,7 +9,7 @@ import { fetchNotifications, sendNotification } from "../services/notificationSe
 
 import gsap from "gsap";
 
-interface Notification {
+interface AppNotification {
   id: number;
   title: string;
   message: string;
@@ -19,13 +19,11 @@ interface Notification {
 
 const Notifications = () => {
   const [isSidebarActive, setIsSidebarActive] = useState(false);
-  const [notifications, setNotifications] = useState<Notification[]>([]);
+  const [notifications, setNotifications] = useState<AppNotification[]>([]);
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const sidebarRef = useRef<HTMLDivElement>(null);
- 
-  console.log(notifications);
-  
+   
 
   const loadNotifications = async () => {
     const data = await fetchNotifications();
@@ -78,7 +76,7 @@ const Notifications = () => {
             isSidebarActive={isSidebarActive}
             setIsSidebarActive={setIsSidebarActive}
           />
-          <NotificationDiv />
+          <NotificationDiv notifications={notifications}/>
         </div>
       </main>
     </>

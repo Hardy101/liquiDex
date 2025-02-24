@@ -15,7 +15,6 @@ interface FormData {
   email_type: boolean;
 }
 
-type btn = "buttonA" | "buttonB";
 type ToggleField = keyof Pick<FormData, "inapp_type" | "email_type">;
 
 const Sidebar = forwardRef<HTMLDivElement, Props>(
@@ -49,7 +48,6 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
         );
       } catch (error) {
         alert(String(error));
-        console.log(error);
       }
     };
     const resetForm = () => {
