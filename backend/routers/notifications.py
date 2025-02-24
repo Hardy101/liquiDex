@@ -1,11 +1,11 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlmodel import Session
 from db import get_session
 from services.notifications import get_notifications, create_notification
 
 router = APIRouter()
 
-@router.post("/")
+@router.post("/add")
 def add_notification(title: str, message: str, inapp, email_type, session: Session = Depends(get_session)):
     return create_notification(session, title, message, inapp, email_type)
 

@@ -27,7 +27,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
     };
     const resetForm = () => {
       setFormData({ title: "", message: "" });
-      buttonstatus = false
+      buttonstatus = true
     };
     return (
       <div
@@ -74,9 +74,12 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
               </label>
               <div className="flex flex-col gap-4">
                 <div className="inapp flex gap-2">
+                
                   <ActionToggleBtn defaultState={buttonstatus}/>
+                  <input type="hidden" name="inapp_type" value={String(buttonstatus)} />
                   <p className="flex flex-col gap-1">
-                    <span className="my-auto">In app</span>
+                    
+                    <span className="my-auto">In app {String(buttonstatus)}</span>
                     <span className="text-grey-4">
                       Keep tabs of all notifications in the notification page
                     </span>
@@ -84,6 +87,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                 </div>
                 <div className="email flex gap-2">
                   <ActionToggleBtn defaultState={buttonstatus}/>
+                  <input type="hidden" name="email_type" value={String(buttonstatus)} />
                   <p className="flex flex-col gap-1">
                     <span className="my-auto">Email Notifications</span>
                     <span className="text-grey-4">

@@ -26,7 +26,7 @@ app.add_middleware(
 )
 
 app.include_router(analysis.router, prefix="/api/analysis", tags=["Analysis"])
-app.include_router(notifications.router, prefix='/api/notifications')
+app.include_router(notifications.router, prefix='/api/notifications', tags=['Notifications'])
 
 @app.get("/")
 async def root():
