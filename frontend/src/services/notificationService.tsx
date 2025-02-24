@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/notifications/";
+const API_URL = "http://localhost:8000/api/notifications/";
 
 export const fetchNotifications = async () => {
   const response = await axios.get(API_URL);

@@ -20,6 +20,6 @@ class Notification(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     title: str
     message: str
-    inapp_type: Optional[bool] = Field(default=False)
-    email_type: Optional[bool] = Field(default=False)
+    inapp_type: bool
+    email_type: bool
     created_at: datetime = Field(default_factory=datetime.now)

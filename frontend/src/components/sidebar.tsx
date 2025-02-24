@@ -1,6 +1,7 @@
 import { forwardRef, useState } from "react";
 
 import ActionToggleBtn from "./minicomponents/actionToggleBtn";
+import axios from "axios";
 
 interface Props {
   isSidebarActive: boolean;
@@ -39,11 +40,17 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
       const { name, value } = e.target;
       setFormData({ ...formData, [name]: value });
     };
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
-      alert(
-        `${formData.email_type}\n${formData.inapp_type}\n${formData.title}\n${formData.message}`
-      );
+      try {
+        const { data } = await axios.post(
+          "http://localhost:8000/api/notifications/add",
+          formData
+        );
+      } catch (error) {
+        alert(String(error));
+        console.log(error);
+      }
     };
     const resetForm = () => {
       setFormData({
