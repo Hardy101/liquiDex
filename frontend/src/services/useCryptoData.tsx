@@ -99,8 +99,9 @@ const useCryptoData = (coinId: string, days: string) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get<AnalysisResult>(API_URL, {
-          params: { coin_id: coinId, days },
+        const response = await axios.post<AnalysisResult>(API_URL, {
+          coin_id: coinId,
+          days: days,
         });
         setData(response.data);
         setError(null);

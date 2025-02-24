@@ -155,11 +155,6 @@ const BotAnalytics: React.FC = () => {
                   </span>
                 </p>
               </div>
-              <p className="mt-2 text-grey-2 italic">
-                New to Analytics? Click{" "}
-                <span className="underline text-blue-500">here</span> to explore
-                the icons and see what's going on.
-              </p>
             </div>
           )}
         </div>

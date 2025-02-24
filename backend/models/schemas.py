@@ -1,4 +1,7 @@
 from pydantic import BaseModel
+from sqlmodel import SQLModel, Field
+from typing import Optional
+from datetime import datetime
 
 class AnalysisRequest(BaseModel):
     coin_id: str
@@ -6,7 +9,7 @@ class AnalysisRequest(BaseModel):
 
 class AnalysisResult(BaseModel):
     position: str
-    roi: float
+    roi: float 
     risk: str
     probability: float
     take_profit: float
