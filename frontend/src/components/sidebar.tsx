@@ -67,7 +67,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
           <h2 className="text-sm my-auto">Create Notification</h2>
           <button
             className="gradient-1 px-2 py-1 rounded-md flex text-black cursor-pointer my-auto"
-            onClick={() => handleToggle("inapp_type")}
+            onClick={() => setIsSidebarActive(false)}
           >
             <i className="fa-solid fa-xmark"></i>
           </button>
@@ -127,7 +127,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                   <input
                     type="hidden"
                     name="email_type"
-                    value={String(isButtonActive.buttonB)}
+                    value={String(formData.email_type)}
                   />
                   <p className="flex flex-col gap-1">
                     <span className="my-auto">Email Notifications</span>
