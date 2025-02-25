@@ -21,22 +21,20 @@ const NotificationDiv: React.FC<Props> = ({ notifications }) => {
         {notifications.map(({ title, message, created_at }, index) => (
           <div
             key={index}
-            className="bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1"
+            className="bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1 grid gap-1"
           >
-            <p className="notification flex justify-between">
-              <span className="flex gap-2">
+            <p className="notification flex gap-4 justify-between">
+              <span className="flex grow gap-2">
                 <img src={Logo} alt="logo" className="w-4 my-auto" />
-                <span className="font-bold text-sm my-auto">{title}</span>
+                <span className="font-bold text-sm my-auto">System Alert</span>
               </span>
-              <span className="text-grey-4 text-xs font-bold">
-                {" "}
-                {created_at}
-              </span>
-            </p>
 
-            <p className="border border-grey-3 bg-dark-1 rounded-md pl-2 py-1 my-auto text-xs mt-2">
-              {message}
+              <span className="text-grey-4 text-xs font-bold my-auto">
+                {new Date(created_at).toLocaleString()}
+              </span>
             </p>
+            <span className="mt-1 ">{title}</span>
+            <p className="text-xs text-grey-2">{message}</p>
           </div>
         ))}
       </div>

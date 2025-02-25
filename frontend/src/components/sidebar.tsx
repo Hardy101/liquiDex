@@ -49,6 +49,8 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
       } catch (error) {
         alert(String(error));
       }
+      resetForm();
+      setIsSidebarActive(false);
     };
     const resetForm = () => {
       setFormData({
