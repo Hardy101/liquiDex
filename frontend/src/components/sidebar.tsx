@@ -13,6 +13,7 @@ interface FormData {
   message: string;
   inapp_type: boolean;
   email_type: boolean;
+  is_read: boolean;
 }
 
 type ToggleField = keyof Pick<FormData, "inapp_type" | "email_type">;
@@ -24,6 +25,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
       message: "",
       inapp_type: false,
       email_type: false,
+      is_read: true,
     });
 
     const handleToggle = (field: ToggleField) => {
@@ -43,14 +45,14 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
       e.preventDefault();
       try {
         const { data } = await axios.post(
-          "http://localhost:8000/api/notifications/add",
+          "http://localhost:8000/api/notifications/add/",
           formData
         );
+        resetForm();
+        setIsSidebarActive(false);
       } catch (error) {
         alert(String(error));
       }
-      resetForm();
-      setIsSidebarActive(false);
     };
     const resetForm = () => {
       setFormData({
@@ -58,6 +60,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
         message: "",
         inapp_type: false,
         email_type: false,
+        is_read: false,
       });
     };
     return (
@@ -114,11 +117,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                     isButtonActive={formData.inapp_type}
                     onClick={() => handleToggle("inapp_type")}
                   />
-                  <input
-                    type="hidden"
-                    name="inapp_type"
-                    value={String(formData.inapp_type)}
-                  />
+
                   <p className="flex flex-col gap-1">
                     <span className="my-auto">In app</span>
                     <span className="text-grey-4">
@@ -130,11 +129,6 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                   <ActionToggleBtn
                     isButtonActive={formData.email_type}
                     onClick={() => handleToggle("email_type")}
-                  />
-                  <input
-                    type="hidden"
-                    name="email_type"
-                    value={String(formData.email_type)}
                   />
                   <p className="flex flex-col gap-1">
                     <span className="my-auto">Email Notifications</span>
@@ -161,7 +155,17 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                 ></textarea>
               </div>
             </div>
-
+            <input
+              type="hidden"
+              name="inapp_type"
+              value={String(formData.inapp_type)}
+            />
+            <input
+              type="hidden"
+              name="email_type"
+              value={String(formData.email_type)}
+            />
+            {/* <input type="hidden" name="is_read" value={String(formData.read)} /> */}
             <div className="form-control mt-4 flex gap-2">
               <button
                 type="button"
