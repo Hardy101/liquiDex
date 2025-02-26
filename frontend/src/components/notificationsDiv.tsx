@@ -18,13 +18,12 @@ interface Props {
 const NotificationDiv: React.FC<Props> = ({ notifications }) => {
   const [status, setStatus] = useState("disconnected");
 
-
   return (
     <>
       <div className="grid gap-4">
-        {notifications.map(({ title, message, created_at, is_read }, index) => (
+        {notifications.map(({ id, title, message, created_at, is_read }) => (
           <div
-            key={index}
+            key={id}
             className={`${
               is_read ? "bg-dark-2 border border-grey-3" : ""
             }  rounded-xl p-3 text-light-1 grid gap-1`}

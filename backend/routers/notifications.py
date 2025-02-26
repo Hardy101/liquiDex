@@ -13,16 +13,3 @@ def add_notification(payload: Notification, session: Session = Depends(get_sessi
 @router.get('/')
 def read_notifications(session: Session = Depends(get_session)):
     return get_notifications(session)
-
-@router.websocket('/get_notifications')
-async def websocket_endpoint(websocket: WebSocket, session: Session = Depends(get_session)):
-    await websocket.accept()
-    try: 
-        while True:
-            data = await websocket.receive_text()
-            notifications = get_notifications(session)
-            await websocket.send_json([notifications.model_dump() for notifications in notifications ])
-    except WebSocketDisconnect as err:
-        return {'web socket disconnect': err}
-    except Exception as err:
-        return {'Error': err}

@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from "react";
+import { io } from "socket.io-client";
 
 import NavBar from "../components/navbar";
 import AsidesSection from "../components/aside";
 import NotificationDiv from "../components/notificationsDiv";
 import Sidebar from "../components/sidebar";
 import PageHeading from "../components/pageHeading";
-import { fetchNotifications, sendNotification } from "../services/notificationService";
 
 import gsap from "gsap";
 
@@ -17,31 +17,17 @@ interface AppNotification {
   is_read: boolean;
 }
 
+const socket = io("http://127.0.0.1:8000", {
+  path: "/api/socket",
+  transports: ["websocket"],
+});
+
 const Notifications = () => {
-  const [isSidebarActive, setIsSidebarActive] = useState(false);
   const [notifications, setNotifications] = useState<AppNotification[]>([]);
+  const [isSidebarActive, setIsSidebarActive] = useState(false);
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const sidebarRef = useRef<HTMLDivElement>(null);
-   
-
-  const loadNotifications = async () => {
-    const data = await fetchNotifications();
-    setNotifications(data);
-  };
-
-  const handleSend = async () => {
-    if (title && message) {
-      await sendNotification(title, message);
-      setTitle("");
-      setMessage("");
-      loadNotifications();
-    }
-  };
-
-  useEffect(() => {
-    loadNotifications();
-  }, []);
 
   useEffect(() => {
     if (isSidebarActive && sidebarRef.current) {
@@ -61,6 +47,22 @@ const Notifications = () => {
     }
   }, [isSidebarActive]);
 
+  useEffect(() => {
+    // Request notifications when component mounts
+    socket.emit("fetch_notifications");
+
+    // Listen for notifications from the server
+    socket.on("notifications", (data) => {
+      console.log("📩 Notifications received:", data);
+      setNotifications(data); // Set the state with fetched notifications
+    });
+
+    // Cleanup on unmount
+    return () => {
+      socket.off("notifications");
+    };
+  }, []);
+
   return (
     <>
       <AsidesSection />
@@ -76,7 +78,7 @@ const Notifications = () => {
             isSidebarActive={isSidebarActive}
             setIsSidebarActive={setIsSidebarActive}
           />
-          <NotificationDiv notifications={notifications}/>
+          <NotificationDiv notifications={notifications} />
         </div>
       </main>
     </>
