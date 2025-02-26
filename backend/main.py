@@ -7,6 +7,8 @@ from db import create_db_and_tables, get_session
 from sqlmodel import Session
 from contextlib import asynccontextmanager
 
+from sockets import sio_app
+
 SessionDep = Annotated[Session, Depends(get_session)]
 
 @asynccontextmanager
@@ -16,6 +18,7 @@ async def lifespan(app: FastAPI):
     print("Shutting down...")
 
 app = FastAPI(lifespan=lifespan)
+app.mount('/api/socket', app=sio_app)
 
 app.add_middleware(
     CORSMiddleware,
