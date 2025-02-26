@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Media
 import Logo from "../assets/logo.png";
@@ -14,7 +14,11 @@ interface AppNotification {
 interface Props {
   notifications: AppNotification[];
 }
+
 const NotificationDiv: React.FC<Props> = ({ notifications }) => {
+  const [status, setStatus] = useState("disconnected");
+
+
   return (
     <>
       <div className="grid gap-4">
