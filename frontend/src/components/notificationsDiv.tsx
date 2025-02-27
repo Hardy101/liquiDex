@@ -33,8 +33,8 @@ const NotificationDiv: React.FC<Props> = ({ notifications }) => {
               <p className="notification flex gap-4 justify-between">
                 <span className="flex gap-2 bg-dark-3 px-2 py-1 rounded-xl">
                   <img src={Logo} alt="logo" className="w-4 my-auto" />
-                  <span className="text-xs my-auto">
-                    {type.charAt(0).toUpperCase() + type.slice(1)} Alert
+                  <span className="text-xs my-auto capitalize">
+                    {type} Alert
                   </span>
                 </span>
 
