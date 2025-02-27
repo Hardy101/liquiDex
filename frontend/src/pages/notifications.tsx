@@ -17,17 +17,38 @@ interface AppNotification {
   is_read: boolean;
 }
 
-const socket = io("http://127.0.0.1:8000", {
-  path: "/api/socket",
-  transports: ["websocket"],
-});
-
 const Notifications = () => {
+  const [ws, setWs] = useState<WebSocket | null>(null);
   const [notifications, setNotifications] = useState<AppNotification[]>([]);
   const [isSidebarActive, setIsSidebarActive] = useState(false);
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const sidebarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const socket = new WebSocket("ws://127.0.0.1:8000/api/socket");
+
+    socket.onopen = () => {
+      console.log("🔌 Connected to WebSocket Server");
+      setWs(socket);
+    };
+
+    socket.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      
+      if (data.notifications) {
+        setNotifications(data.notifications);
+      }
+    };
+
+    socket.onclose = () => {
+      console.log("❌ WebSocket disconnected");
+    };
+
+    return () => {
+      socket.close();
+    };
+  }, []);
 
   useEffect(() => {
     if (isSidebarActive && sidebarRef.current) {
@@ -46,22 +67,6 @@ const Notifications = () => {
       });
     }
   }, [isSidebarActive]);
-
-  useEffect(() => {
-    // Request notifications when component mounts
-    socket.emit("fetch_notifications");
-
-    // Listen for notifications from the server
-    socket.on("notifications", (data) => {
-      console.log("📩 Notifications received:", data);
-      setNotifications(data); // Set the state with fetched notifications
-    });
-
-    // Cleanup on unmount
-    return () => {
-      socket.off("notifications");
-    };
-  }, []);
 
   return (
     <>

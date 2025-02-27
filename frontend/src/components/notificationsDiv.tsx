@@ -25,7 +25,7 @@ const NotificationDiv: React.FC<Props> = ({ notifications }) => {
           <div
             key={id}
             className={`${
-              is_read ? "bg-dark-2 border border-grey-3" : ""
+              is_read ? "" : "bg-dark-2 border border-grey-3"
             }  rounded-xl p-3 text-light-1 grid gap-1`}
           >
             <p className="notification flex gap-4 justify-between">

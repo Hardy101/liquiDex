@@ -25,7 +25,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
       message: "",
       inapp_type: false,
       email_type: false,
-      is_read: true,
+      is_read: false,
     });
 
     const handleToggle = (field: ToggleField) => {
@@ -165,7 +165,11 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
               name="email_type"
               value={String(formData.email_type)}
             />
-            {/* <input type="hidden" name="is_read" value={String(formData.read)} /> */}
+            <input
+              type="hidden"
+              name="is_read"
+              value={String(formData.is_read)}
+            />
             <div className="form-control mt-4 flex gap-2">
               <button
                 type="button"

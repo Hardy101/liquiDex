@@ -46,7 +46,6 @@ const PageHeading: React.FC<Props> = ({
         onClick={(e) => {
           e.stopPropagation();
           setIsSidebarActive(true);
-          console.log(isSidebarActive);
         }}
       >
         <i className="fa-solid fa-plus my-auto"></i>
