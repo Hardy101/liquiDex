@@ -24,3 +24,4 @@ class Notification(SQLModel, table=True):
     email_type: bool
     created_at: datetime = Field(default_factory=datetime.now)
     is_read: bool
+    type: str

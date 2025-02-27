@@ -14,6 +14,7 @@ interface FormData {
   inapp_type: boolean;
   email_type: boolean;
   is_read: boolean;
+  type: string;
 }
 
 type ToggleField = keyof Pick<FormData, "inapp_type" | "email_type">;
@@ -26,6 +27,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
       inapp_type: false,
       email_type: false,
       is_read: false,
+      type: "",
     });
 
     const handleToggle = (field: ToggleField) => {
@@ -36,7 +38,9 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
     };
 
     const handleChange = (
-      e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+      e: React.ChangeEvent<
+        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >
     ) => {
       const { name, value } = e.target;
       setFormData({ ...formData, [name]: value });
@@ -61,6 +65,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
         inapp_type: false,
         email_type: false,
         is_read: false,
+        type: "",
       });
     };
     return (
@@ -134,6 +139,27 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                     <span className="my-auto">Email Notifications</span>
                     <span className="text-grey-4">
                       Recieve email notfifications.
+                    </span>
+                  </p>
+                </div>
+                <div className="type flex gap-2">
+                  <select
+                    name="type"
+                    id="type"
+                    value={formData.type}
+                    onChange={handleChange}
+                    className="w-2/12 bg-dark-2 p-2 rounded-md"
+                  >
+                    <option value="">Alert</option>
+                    <option value="system">System</option>
+                    <option value="security">Security</option>
+                    <option value="maintenance">Maintenance</option>
+                    <option value="policy">Policy Change</option>
+                  </select>
+                  <p className="flex flex-col gap-1">
+                    <span className="my-auto">Select Alert Type</span>
+                    <span className="text-grey-4">
+                      Defines the category of notification.
                     </span>
                   </p>
                 </div>

@@ -18,7 +18,6 @@ async def handle_websocket(websocket: WebSocket):
             
         while True:
             await websocket.receive_text()
-            # This can be extended if needed (like receiving a ping or heartbeat)
     except Exception as e:
         print(f"WebSocket error: {e}")
     finally:
@@ -32,6 +31,7 @@ def serialize_notification(notification):
         'inapp_type': notification.inapp_type,
         'email_type': notification.email_type,
         'is_read': notification.is_read,
+        'type': notification.type,
         'created_at': notification.created_at.isoformat()  # Datetime to string
     }
 

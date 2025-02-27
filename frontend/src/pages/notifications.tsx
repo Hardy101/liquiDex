@@ -1,6 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { io } from "socket.io-client";
-
 import NavBar from "../components/navbar";
 import AsidesSection from "../components/aside";
 import NotificationDiv from "../components/notificationsDiv";
@@ -15,14 +13,12 @@ interface AppNotification {
   message: string;
   created_at: string;
   is_read: boolean;
+  type: string;
 }
 
 const Notifications = () => {
-  const [ws, setWs] = useState<WebSocket | null>(null);
   const [notifications, setNotifications] = useState<AppNotification[]>([]);
   const [isSidebarActive, setIsSidebarActive] = useState(false);
-  const [title, setTitle] = useState("");
-  const [message, setMessage] = useState("");
   const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,12 +26,11 @@ const Notifications = () => {
 
     socket.onopen = () => {
       console.log("🔌 Connected to WebSocket Server");
-      setWs(socket);
     };
 
     socket.onmessage = (event) => {
       const data = JSON.parse(event.data);
-      
+
       if (data.notifications) {
         setNotifications(data.notifications);
       }

@@ -11,7 +11,7 @@ router = APIRouter()
 
 @router.post('/add')
 async def add_notification(payload: Notification, session: Session = Depends(get_session)):
-    create_notification(session, payload.title, payload.message, payload.inapp_type, payload.email_type, payload.is_read)
+    create_notification(session, payload.title, payload.message, payload.inapp_type, payload.email_type, payload.is_read, payload.type)
 
     notifications = get_notifications(session)
     await broadcast_notifications(notifications)
