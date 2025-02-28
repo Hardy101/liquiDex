@@ -105,6 +105,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                 type="title"
                 name="title"
                 id="title"
+                required
                 onChange={handleChange}
                 value={formData.title}
                 placeholder="Enter Notification Title"
@@ -148,6 +149,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                     id="type"
                     value={formData.type}
                     onChange={handleChange}
+                    required
                     className="w-2/12 bg-dark-2 p-2 rounded-md"
                   >
                     <option value="">Alert</option>
@@ -176,6 +178,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
                   id="message"
                   value={formData.message}
                   onChange={handleChange}
+                  required
                   className="bg-dark-2 w-full rounded-md outline-none p-2"
                   placeholder="Write something..."
                 ></textarea>
