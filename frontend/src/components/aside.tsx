@@ -9,7 +9,11 @@ const AsidesSection: React.FC = () => {
     { icon: "fas fa-th", path: "/", status: "not-active" },
     { icon: "fa-solid fa-robot", path: "/bots", status: "not-active" },
     { icon: "fa-solid fa-database", path: "/database", status: "not-active" },
-    { icon: "fa-solid fa-chart-simple", path: "/analytics", status: "not-active" },
+    {
+      icon: "fa-solid fa-chart-simple",
+      path: "/analytics",
+      status: "not-active",
+    },
   ];
 
   return (
@@ -33,21 +37,21 @@ const AsidesSection: React.FC = () => {
           </ul>
 
           <ul className="mx-auto text-md grid gap-3">
-            <li className="mx-auto">
+            <Link to="/settings" className="mx-auto">
               <a>
                 <i className="fa-solid fa-gear"></i>
               </a>
-            </li>
+            </Link>
             <li className="mx-auto">
               <a>
-              <i className="fa-solid fa-question"></i>
+                <i className="fa-solid fa-question"></i>
               </a>
             </li>
-            <li className="mx-auto">
+            <Link to={'/auth'} className="mx-auto">
               <a>
-              <i className="fa-solid fa-right-to-bracket"></i>
+                <i className="fa-solid fa-right-to-bracket"></i>
               </a>
-            </li>
+            </Link>
           </ul>
         </div>
       </aside>
