@@ -1,11 +1,11 @@
 from sqlmodel import Session, select
 from models.schemas import Notification
 
-def create_notification(session: Session, title: str, msg: str, inapp:bool, email: bool, is_read: bool, type: str):
+def create_notification(db: Session, title: str, msg: str, inapp:bool, email: bool, is_read: bool, type: str):
     notification = Notification(title=title, message=msg, inapp_type=inapp, email_type=email, is_read=is_read, type= type)
-    session.add(notification)
-    session.commit()
-    session.refresh(notification)
+    db.add(notification)
+    db.commit()
+    db.refresh(notification)
     return notification
 
 def get_notifications(session: Session):
