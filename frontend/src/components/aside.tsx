@@ -18,7 +18,7 @@ const AsidesSection: React.FC = () => {
 
   return (
     <>
-      <aside className="fixed top-0 h-screen bg-dark-2 text-white p-4 border-r border-grey-3">
+      <aside className="fixed top-0 h-screen bg-dark-2 text-white p-4 border-r border-grey-3 z-20">
         <div className="h-full flex flex-col gap-16">
           <a>
             <img src={Logo} alt="logo" className="w-8" />
@@ -47,7 +47,7 @@ const AsidesSection: React.FC = () => {
                 <i className="fa-solid fa-question"></i>
               </a>
             </li>
-            <Link to={'/auth'} className="mx-auto">
+            <Link to={"/auth"} className="mx-auto">
               <a>
                 <i className="fa-solid fa-right-to-bracket"></i>
               </a>
