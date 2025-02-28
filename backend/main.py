@@ -2,19 +2,20 @@ from fastapi import FastAPI, WebSocket, Depends
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from routers import analysis, notifications
-from services.notifications import get_notifications
-from sqlmodel import Session
-from db import engine, create_db_and_tables, get_session
+from db import create_db_and_tables, engine
 from contextlib import asynccontextmanager
-from models.schemas import Notification
-from services.notifications import create_notification
 from services.websockets import handle_websocket, active_connections
+from sqlmodel import Session
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     create_db_and_tables()
     yield
     print("Shutting down...")
+
+def get_db():
+    with Session(engine) as session:
+        yield session
 
 app = FastAPI(lifespan=lifespan)
 app.add_middleware(
