@@ -4,12 +4,11 @@ import { GoogleLogin, CredentialResponse } from "@react-oauth/google";
 import AsidesSection from "../components/aside";
 import NavBar from "../components/navbar";
 
-
 const Authentication: React.FC = () => {
   const handleLogin = (credentialResponse: CredentialResponse) => {
     const token = credentialResponse.credential;
     console.log(token);
-    fetch("http://localhost:8000/auth/google", {
+    fetch("http://localhost:8000/auth", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token }),

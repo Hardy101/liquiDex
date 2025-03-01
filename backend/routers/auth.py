@@ -13,7 +13,7 @@ GOOGLE_CLIENT_ID = '395545616135-40rsc8utnt3lg8al8la5vsg2mqva2ubh.apps.googleuse
 
 router = APIRouter()
 
-@router.post("/google")
+@router.post("/")
 def google_login(payload: GoogleAuthRequest, db: Session = Depends(get_session)):
     try:
         idinfo = id_token.verify_oauth2_token(payload.token, requests.Request(), GOOGLE_CLIENT_ID)
