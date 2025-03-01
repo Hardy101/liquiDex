@@ -10,7 +10,7 @@ interface AnalysisResult {
   stop_loss: number;
 }
 
-const API_URL = "http://127.0.0.1:8000/api/analysis/";
+const API_URL = "https://liquidex.onrender.com/api/analysis";
 
 const useCryptoData = (coinId: string, days: string) => {
   const [data, setData] = useState<AnalysisResult | null>(null);

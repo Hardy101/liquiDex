@@ -24,7 +24,7 @@ const Notifications = () => {
   const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const socket = new WebSocket("ws://127.0.0.1:8000/api/socket");
+    const socket = new WebSocket("wss:https://liquidex.onrender.com/api/socket");
 
     socket.onopen = () => {
       console.log("🔌 Connected to WebSocket Server");

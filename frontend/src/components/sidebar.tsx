@@ -49,7 +49,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
       e.preventDefault();
       try {
         await axios.post(
-          "http://localhost:8000/api/notifications/add/",
+          "https://liquidex.onrender.com/api/notifications/add",
           formData
         );
         resetForm();

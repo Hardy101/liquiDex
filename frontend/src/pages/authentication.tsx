@@ -11,7 +11,7 @@ const Authentication: React.FC = () => {
   const handleLogin = (credentialResponse: CredentialResponse) => {
     const token = credentialResponse.credential;
     console.log(token);
-    fetch("http://localhost:8000/api/auth", {
+    fetch("https://liquidex.onrender.com/api/auth", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token }),

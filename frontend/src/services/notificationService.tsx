@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/api/notifications/";
+const API_URL = "https://liquidex.onrender.com/api/notifications";
 
 export const fetchNotifications = async () => {
   const response = await axios.get(API_URL);
