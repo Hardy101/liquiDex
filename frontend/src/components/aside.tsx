@@ -38,19 +38,13 @@ const AsidesSection: React.FC = () => {
 
           <ul className="mx-auto text-md grid gap-3">
             <Link to="/settings" className="mx-auto">
-              <a>
-                <i className="fa-solid fa-gear"></i>
-              </a>
+              <i className="fa-solid fa-gear"></i>
             </Link>
             <li className="mx-auto">
-              <a>
-                <i className="fa-solid fa-question"></i>
-              </a>
+              <i className="fa-solid fa-question"></i>
             </li>
             <Link to={"/auth"} className="mx-auto">
-              <a>
-                <i className="fa-solid fa-right-to-bracket"></i>
-              </a>
+              <i className="fa-solid fa-right-to-bracket"></i>
             </Link>
           </ul>
         </div>
