@@ -4,11 +4,10 @@ interface Props {
 }
  
 const PageHeading: React.FC<Props> = ({
-  isSidebarActive,
   setIsSidebarActive,
 }) => {
   return (
-    <div className="flex justify-between gap-4 bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1 text-xs">
+    <div className="flex flex-wrap justify-between gap-4 bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1 text-xs">
       <h2 className="text-xl font-bold flex gap-2 grow">
         <span className="my-auto">Notifications</span>
         <span className="bg-dark-3 border border-light-1 rounded-md px-2 text-xs font-medium my-auto">
