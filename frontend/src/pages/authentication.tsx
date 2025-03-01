@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { GoogleLogin, CredentialResponse } from "@react-oauth/google";
+import { useNavigate } from "react-router-dom";
 
 import AsidesSection from "../components/aside";
 import NavBar from "../components/navbar";
 
 const Authentication: React.FC = () => {
+  const navigate = useNavigate();
   const handleLogin = (credentialResponse: CredentialResponse) => {
     const token = credentialResponse.credential;
     console.log(token);
@@ -14,7 +16,12 @@ const Authentication: React.FC = () => {
       body: JSON.stringify({ token }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("user", JSON.stringify(data));
+
+        navigate("/dashboard");
+      })
       .catch((err) => console.error(err));
   };
   return (
