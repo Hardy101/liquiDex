@@ -40,7 +40,7 @@ const SettingsNavbar: React.FC<ActiveTabProps> = ({
               onClick={() => setActiveTab(tab_id)}
             >
               <i className={icon}></i>
-              <span className="my-auto">{btn}</span>
+              <span className="my-auto hidden md:block">{btn}</span>
             </button>
           </li>
         ))}
