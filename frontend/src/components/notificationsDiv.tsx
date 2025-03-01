@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // Media
 import Logo from "../assets/logo.png";

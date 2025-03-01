@@ -8,7 +8,7 @@ interface FormData {
 const BotAnalytics: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({ ticker: "" });
   const [coinId, setCoinId] = useState("");
-  const [days, setDays] = useState("1");
+  const [days] = useState("1");
   const [submittedCoin, setSubmittedCoin] = useState<string>(coinId);
   const [submittedDays, setSubmittedDays] = useState<string>(days);
 
@@ -115,12 +115,16 @@ const BotAnalytics: React.FC = () => {
                 <span className="flex gap-2">
                   <span
                     className={`bg-dark-1 py-1 px-2 border border-grey-3 rounded-md text-${
-                      data.position.toLocaleLowerCase() == 'short' ? "red-500" : "green-500"
+                      data.position.toLocaleLowerCase() == "short"
+                        ? "red-500"
+                        : "green-500"
                     } my-auto`}
                   >
                     <i
                       className={`fa-solid fa-arrow-${
-                        data.position.toLocaleLowerCase() == "short" ? "down" : "up"
+                        data.position.toLocaleLowerCase() == "short"
+                          ? "down"
+                          : "up"
                       }`}
                     ></i>
                   </span>
