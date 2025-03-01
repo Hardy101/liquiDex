@@ -49,3 +49,5 @@ class UserResponse(UserBase):
     created_at: datetime
     last_login: datetime
     
+class GoogleAuthRequest(BaseModel):
+    token: str
