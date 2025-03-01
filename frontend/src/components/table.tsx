@@ -18,7 +18,6 @@ const Table: React.FC = () => {
             </th>
             <th>Base/Quote Pair</th>
             <th>Access</th>
-            <th>Deal</th>
             <th>Status</th>
             <th>Actions</th>
           </tr>
@@ -42,7 +41,6 @@ const Table: React.FC = () => {
             </td>
             <td>BTC/USDT</td>
             <td>Full Access</td>
-            <td>.</td>
             <td>
               <ActionToggleBtn defaultState={true} />
             </td>
@@ -76,9 +74,8 @@ const Table: React.FC = () => {
             </td>
             <td>OKB/USDT</td>
             <td>Limited Access</td>
-            <td>.</td>
             <td>
-              <ActionToggleBtn defaultState={false} />
+              <ActionToggleBtn isButtonActive={false} onClick={()=>{}}  defaultStatus={false} />
             </td>
             <td className="text-md flex gap-2">
               <button className="my-auto">
