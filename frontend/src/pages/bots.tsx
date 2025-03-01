@@ -38,7 +38,7 @@ const Bots: React.FC = () => {
     <>
       <AsidesSection />
       <main
-        className="relative min-h-dvh ml-12 w-full bg-dark-1 overflow-hidden"
+        className="relative min-h-dvh ml-12 w-full bg-dark-1"
         onClick={(e) => {
           e.stopPropagation();
           setIsBotSidebarActive(false);

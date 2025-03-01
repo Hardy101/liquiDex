@@ -21,7 +21,7 @@ const NotificationDiv: React.FC<Props> = ({ notifications }) => {
 
   return (
     <>
-      <div className="grid gap-4">
+      <div className="flex flex-col gap-4">
         {notifications.map(
           ({ id, title, message, created_at, is_read, type }) => (
             <div

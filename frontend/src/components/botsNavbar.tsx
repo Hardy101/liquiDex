@@ -32,7 +32,7 @@ const BotsNavBar: React.FC<Props> = ({
               onClick={() => setActiveTab(tab_id)}
             >
               <i className={icon}></i>
-              <span className="my-auto">{btn}</span>
+              <span className="my-auto hidden md:block">{btn}</span>
             </button>
           </li>
         ))}
