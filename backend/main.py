@@ -4,7 +4,7 @@ import uvicorn
 from routers import analysis, notifications, auth
 from db import create_db_and_tables, engine
 from contextlib import asynccontextmanager
-from services.websockets import handle_websocket, active_connections
+from services.websockets import handle_websocket
 from sqlmodel import Session
 
 @asynccontextmanager

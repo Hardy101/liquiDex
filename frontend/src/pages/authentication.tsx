@@ -8,7 +8,7 @@ const Authentication: React.FC = () => {
   const handleLogin = (credentialResponse: CredentialResponse) => {
     const token = credentialResponse.credential;
     console.log(token);
-    fetch("http://localhost:8000/auth", {
+    fetch("http://localhost:8000/api/auth", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token }),
@@ -32,9 +32,8 @@ const Authentication: React.FC = () => {
                 console.log("Login Failed");
               }}
             />
-            {/* <div className="g-signin2" data-onsuccess="onSignIn"></div> */}
             <p className="text-grey-4 mt-4">
-              Do you not have an account? then{" "}
+              Do you not have an account? then
               <Link to="#" className="underline hover:font-bold">
                 sign up
               </Link>
