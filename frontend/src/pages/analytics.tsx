@@ -5,8 +5,10 @@ import NavBar from "../components/navbar";
 import AnalyticsNavbar from "../components/analyticsNavbar";
 import AnalyticsDashboard from "../components/analyticsDashboard";
 import TradeHistory from "../components/tradeHistory";
+import useAuthRedirect from "../customHooks/useAuthRedirect";
 
 const Analytics: React.FC = () => {
+  useAuthRedirect();
   const [activeTab, setActiveTab] = useState("dashboard");
   return (
     <>

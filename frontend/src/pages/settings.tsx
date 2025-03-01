@@ -6,8 +6,10 @@ import SettingsNavbar from "../components/settingsNavbar";
 import SettingsPlatform from "../components/settingsPlatform";
 import SettingsAccount from "../components/settinsAccount";
 import ComingSoon from "../components/comingSoon";
+import useAuthRedirect from "../customHooks/useAuthRedirect";
 
 const Settings: React.FC = () => {
+  useAuthRedirect();
   const [activeTab, setActiveTab] = useState("account");
   return (
     <>

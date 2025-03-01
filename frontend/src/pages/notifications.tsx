@@ -4,6 +4,7 @@ import AsidesSection from "../components/aside";
 import NotificationDiv from "../components/notificationsDiv";
 import Sidebar from "../components/sidebar";
 import PageHeading from "../components/pageHeading";
+import useAuthRedirect from "../customHooks/useAuthRedirect";
 
 import gsap from "gsap";
 
@@ -17,6 +18,7 @@ interface AppNotification {
 }
 
 const Notifications = () => {
+  useAuthRedirect();
   const [notifications, setNotifications] = useState<AppNotification[]>([]);
   const [isSidebarActive, setIsSidebarActive] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
