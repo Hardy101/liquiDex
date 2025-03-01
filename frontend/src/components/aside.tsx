@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 
 const AsidesSection: React.FC = () => {
+  const logout = () => {
+    localStorage.removeItem("user");
+  };
+  const user = localStorage.getItem("user");
   const asides_nav_link = [
     { icon: "fas fa-th", path: "/", status: "not-active" },
     { icon: "fa-solid fa-robot", path: "/bots", status: "not-active" },
@@ -43,8 +47,13 @@ const AsidesSection: React.FC = () => {
             <li className="mx-auto">
               <i className="fa-solid fa-question"></i>
             </li>
-            <Link to={"/auth"} className="mx-auto">
-              <i className="fa-solid fa-right-to-bracket"></i>
+            <Link to={user ? "/auth" : ""} className="mx-auto">
+              <i
+                onClick={user ? logout : undefined}
+                className={`fa-solid ${
+                  user ? "fa-right-from-bracket" : "fa-right-to-bracket"
+                }`}
+              ></i>
             </Link>
           </ul>
         </div>
