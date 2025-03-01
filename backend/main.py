@@ -1,7 +1,7 @@
 from fastapi import FastAPI, WebSocket, Depends
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-from routers import analysis, notifications
+from routers import analysis, notifications, auth
 from db import create_db_and_tables, engine
 from contextlib import asynccontextmanager
 from services.websockets import handle_websocket, active_connections
@@ -27,6 +27,7 @@ app.add_middleware(
 )
 active_connections: set[WebSocket] = set()
 
+app.include_router(auth.router, prefix="/api/auth", tags=['authentication'])
 app.include_router(analysis.router, prefix="/api/analysis", tags=["Analysis"])
 app.include_router(notifications.router, prefix='/api/notifications', tags=['Notifications'])
 
