@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin, CredentialResponse } from "@react-oauth/google";
-import { useNavigate } from "react-router-dom";
 
 import AsidesSection from "../components/aside";
 import NavBar from "../components/navbar";
@@ -20,10 +20,17 @@ const Authentication: React.FC = () => {
         console.log(data);
         localStorage.setItem("user", JSON.stringify(data));
 
-        navigate("/dashboard");
+        navigate("/");
       })
       .catch((err) => console.error(err));
   };
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      navigate("/");
+    }
+  }, []);
   return (
     <>
       <AsidesSection />
