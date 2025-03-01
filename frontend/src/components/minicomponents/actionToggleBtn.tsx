@@ -1,9 +1,5 @@
 import { useState } from "react";
 
-// interface Props {
-//   defaultState?: boolean;
-// }
-
 interface Props {
   isButtonActive: boolean;
   onClick: () => void;
