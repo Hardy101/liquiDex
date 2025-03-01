@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // Media
 import Logo from "../assets/logo.png";
@@ -17,8 +17,6 @@ interface Props {
 }
 
 const NotificationDiv: React.FC<Props> = ({ notifications }) => {
-  const [status, setStatus] = useState("disconnected");
-
   return (
     <>
       <div className="flex flex-col gap-4">

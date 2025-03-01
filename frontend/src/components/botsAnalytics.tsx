@@ -14,8 +14,6 @@ const BotAnalytics: React.FC = () => {
 
   const { data, loading, error } = useCryptoData(submittedCoin, submittedDays);
 
-  // const [submittedData, setSubmittedData] = useState<any>(null);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setCoinId(value);

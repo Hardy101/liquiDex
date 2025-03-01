@@ -11,7 +11,6 @@ interface AnalysisResult {
 }
 
 const API_URL = "http://127.0.0.1:8000/api/analysis/";
-const NOTIFICATION_URL = "http://127.0.0.1:8000/api/notifications/";
 
 const useCryptoData = (coinId: string, days: string) => {
   const [data, setData] = useState<AnalysisResult | null>(null);

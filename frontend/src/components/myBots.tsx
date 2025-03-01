@@ -14,9 +14,7 @@ interface Props {
 }
 
 const MyBots: React.FC<Props> = ({
-  activeTab,
   isBotSidebarActive,
-  setActiveTab,
   setIsBotSidebarActive,
 }) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
