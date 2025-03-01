@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { GoogleLogin, CredentialResponse } from "@react-oauth/google";
 
+import Logo from "../assets/logo.png";
 import AsidesSection from "../components/aside";
 import NavBar from "../components/navbar";
 
@@ -38,20 +39,20 @@ const Authentication: React.FC = () => {
         <NavBar />
         <div className="body p-8 grid gap-8 p-8">
           <div className="h-full text-light-1 bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1 text-xs grid gap-2">
-            <h1 className="text-2xl font-bold">Hello there!</h1>
-            <p className="text-grey-2">Get ready to experience greatness!</p>
+            <p className="flex gap-2 border border-grey-3 mr-auto px-2 py-1 rounded-md bg-dark-1">
+              <img src={Logo} alt="logo" className="w-6 my-auto" />
+            </p>
+            <h2 className="text-2xl font-bold mt-4">
+              Authenticate your account!
+            </h2>
+            <p className="text-grey-2">Sign in to continue your journey</p>
             <GoogleLogin
               onSuccess={handleLogin}
               onError={() => {
                 console.log("Login Failed");
               }}
             />
-            <p className="text-grey-4 mt-4">
-              Do you not have an account? then
-              <Link to="#" className="underline hover:font-bold">
-                sign up
-              </Link>
-            </p>
+            <p className="text-grey-4 mt-4">Having some trouble? <span className="underline hover:text-light-1 cursor-pointer">Reach out</span> we can help</p>
           </div>
         </div>
       </main>
