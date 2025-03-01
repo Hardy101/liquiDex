@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { GoogleLogin, googleLogout, CredentialResponse } from "@react-oauth/google";
+import { GoogleLogin, CredentialResponse } from "@react-oauth/google";
 
 import AsidesSection from "../components/aside";
 import NavBar from "../components/navbar";

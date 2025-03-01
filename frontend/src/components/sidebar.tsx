@@ -48,7 +48,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
       try {
-        const { data } = await axios.post(
+        await axios.post(
           "http://localhost:8000/api/notifications/add/",
           formData
         );

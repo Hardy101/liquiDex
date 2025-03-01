@@ -1,4 +1,4 @@
-import { act, useState } from "react";
+import React, { useState } from "react";
 import ActionToggleBtn from "./minicomponents/actionToggleBtn";
 
 interface FormData {
