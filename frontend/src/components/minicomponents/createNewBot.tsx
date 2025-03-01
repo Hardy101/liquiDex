@@ -67,7 +67,7 @@ const CreateNewBot = forwardRef<HTMLDivElement, Props>(
             </div>
             <div className="form-control flex justify-between pb-2 border-b-2 border-grey-3">
               <label className="text-grey-2 my-auto">Status</label>
-              <ActionToggleBtn />
+              <ActionToggleBtn isButtonActive={false} onClick={()=>{}} defaultStatus={true} />
             </div>
             <div className="form-control flex justify-between pb-2 border-b-2 border-grey-3">
               <label htmlFor="select" className="text-grey-2 my-auto">

@@ -42,7 +42,7 @@ const Table: React.FC = () => {
             <td>BTC/USDT</td>
             <td>Full Access</td>
             <td>
-              <ActionToggleBtn defaultState={true} />
+              <ActionToggleBtn isButtonActive={false} onClick={()=>{}} defaultStatus={true} />
             </td>
             <td className="text-md flex gap-2">
               <button className="my-auto">
