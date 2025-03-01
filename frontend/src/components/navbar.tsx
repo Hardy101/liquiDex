@@ -13,7 +13,7 @@ const NavBar: React.FC = () => {
         <h1 className="grow my-auto">Dashboard</h1>
         <form
           action="#"
-          className="flex border border-grey-3 rounded-md pl-2 py-2 my-auto text-xs bg-dark-1"
+          className="hidden md:flex border border-grey-3 rounded-md pl-2 py-2 my-auto text-xs bg-dark-1"
         >
           <i className="fa-solid fa-magnifying-glass my-auto"></i>
           <input
