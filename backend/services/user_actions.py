@@ -18,8 +18,7 @@ def create_or_update_user(db: Session, user_data: UserCreate) -> User:
         db.refresh(user)
         return user
 
-
-    new_user = User(google_id=user_data.google_id, email= user_data.email, name=user_data.name)
+    new_user = User(google_id=user_data.google_id, email= user_data.email, name=user_data.name, is_staff=user_data.is_staff)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)

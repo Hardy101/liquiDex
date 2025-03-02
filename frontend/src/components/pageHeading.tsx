@@ -2,10 +2,8 @@ interface Props {
   isSidebarActive: boolean;
   setIsSidebarActive: (tab: boolean) => void;
 }
- 
-const PageHeading: React.FC<Props> = ({
-  setIsSidebarActive,
-}) => {
+
+const PageHeading: React.FC<Props> = ({ setIsSidebarActive }) => {
   return (
     <div className="flex flex-wrap justify-between gap-4 bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1 text-xs">
       <h2 className="text-xl font-bold flex gap-2 grow">

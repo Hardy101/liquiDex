@@ -1,3 +1,4 @@
+from xmlrpc.client import boolean
 from pydantic import BaseModel, EmailStr
 from sqlalchemy import Boolean
 from sqlmodel import SQLModel, Field
@@ -33,6 +34,7 @@ class User(SQLModel, table=True):
     name: Optional[str]
     created_at: datetime = Field(default_factory=datetime.now)
     last_login: datetime = Field(default_factory=datetime.now)
+    is_staff: boolean = Field(default=False)
 
     def update_last_login(self):
         self.last_login = datetime.now()
@@ -43,6 +45,7 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     google_id: str
+    is_staff: boolean
 
 class UserResponse(UserBase):
     id: int
