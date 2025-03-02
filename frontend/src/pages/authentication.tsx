@@ -28,6 +28,7 @@ const Authentication: React.FC = () => {
           is_staff: data.is_staff,
         };
         setUser(loggedInUser);
+        localStorage.setItem("user", JSON.stringify(loggedInUser));
         navigate("/");
       })
       .catch((err) => console.error(err));

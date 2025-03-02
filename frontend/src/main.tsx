@@ -1,4 +1,4 @@
-import { StrictMode, useState } from "react";
+import { StrictMode, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
@@ -9,6 +9,11 @@ const GOOGLE_CLIENT_ID =
   "395545616135-40rsc8utnt3lg8al8la5vsg2mqva2ubh.apps.googleusercontent.com";
 
 function AppWrapper() {
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) setUser(JSON.parse(user));
+  }, []);
+
   const [user, setUser] = useState<User | null>(null);
 
   return (

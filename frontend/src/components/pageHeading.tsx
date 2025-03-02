@@ -1,9 +1,12 @@
+import { useUser } from "../context/userContext";
+
 interface Props {
   isSidebarActive: boolean;
   setIsSidebarActive: (tab: boolean) => void;
 }
 
 const PageHeading: React.FC<Props> = ({ setIsSidebarActive }) => {
+  const { user } = useUser();
   return (
     <div className="flex flex-wrap justify-between gap-4 bg-dark-2 border border-grey-3 rounded-xl p-3 text-light-1 text-xs">
       <h2 className="text-xl font-bold flex gap-2 grow">
@@ -37,17 +40,18 @@ const PageHeading: React.FC<Props> = ({ setIsSidebarActive }) => {
           <option value="#">Analysis notifications</option>
         </select>
       </form>
-
-      <button
-        className="flex gradient-1 gap-2 rounded-md pl-2 pr-3 py-1 text-black font-medium"
-        onClick={(e) => {
-          e.stopPropagation();
-          setIsSidebarActive(true);
-        }}
-      >
-        <i className="fa-solid fa-plus my-auto"></i>
-        <span className="my-auto">Create notification</span>
-      </button>
+      {user?.is_staff && (
+        <button
+          className="flex gradient-1 gap-2 rounded-md pl-2 pr-3 py-1 text-black font-medium"
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsSidebarActive(true);
+          }}
+        >
+          <i className="fa-solid fa-plus my-auto"></i>
+          <span className="my-auto">Create notification</span>
+        </button>
+      )}
     </div>
   );
 };

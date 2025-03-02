@@ -3,10 +3,10 @@ import React from "react";
 import AsidesSection from "../components/aside";
 import NavBar from "../components/navbar";
 import BotsNotifications from "../components/botsNotifications";
-
+import useAuthRedirect from "../customHooks/useAuthRedirect";
 
 const Dashboard: React.FC = () => {
-  // useAuthRedirect();
+  useAuthRedirect();
   return (
     <>
       <AsidesSection />
