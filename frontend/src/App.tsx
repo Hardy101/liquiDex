@@ -9,6 +9,7 @@ import Notifications from "./pages/notifications";
 import ComingSoonPage from "./pages/comingSoon";
 import Authentication from "./pages/authentication";
 
+
 function App() {
   return (
     <>
