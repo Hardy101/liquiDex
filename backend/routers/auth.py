@@ -96,3 +96,8 @@ def get_current_user(request: Request, db: Session = Depends(get_session)):
         raise HTTPException(status_code=404, detail="User not found")
 
     return {"email": user.email, "name": user.name, "is_staff": user.is_staff}
+
+@router.post("/logout")
+def logout(response: Response):
+    response.delete_cookie(COOKIE_NAME)
+    return {"message": "Logged out"}

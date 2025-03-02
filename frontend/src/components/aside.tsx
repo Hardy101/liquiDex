@@ -1,14 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useUser } from "../context/userContext";
 
 // Media
 import Logo from "../assets/logo.png";
 
 const AsidesSection: React.FC = () => {
   const logout = () => {
-    localStorage.removeItem("user");
+    fetch("http://localhost:8000/api/auth/logout", {
+      method: "POST",
+      credentials: "include",
+    }).then(() => {
+      localStorage.removeItem("user");
+    });
   };
-  const user = localStorage.getItem("user");
+
+  const { user } = useUser();
+
   const asides_nav_link = [
     { icon: "fas fa-th", path: "/", status: "not-active" },
     { icon: "fa-solid fa-robot", path: "/bots", status: "not-active" },
