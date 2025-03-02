@@ -2,11 +2,14 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin, CredentialResponse } from "@react-oauth/google";
 
+import { useUser } from "../context/userContext";
 import Logo from "../assets/logo.png";
 import AsidesSection from "../components/aside";
 import NavBar from "../components/navbar";
+import { User } from "../context/userContext";
 
 const Authentication: React.FC = () => {
+  const { setUser } = useUser();
   const navigate = useNavigate();
   const handleLogin = (credentialResponse: CredentialResponse) => {
     const token = credentialResponse.credential;
@@ -19,8 +22,12 @@ const Authentication: React.FC = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        localStorage.setItem("user", JSON.stringify(data));
-
+        const loggedInUser: User = {
+          name: data.name,
+          email: data.email,
+          is_staff: data.is_staff,
+        };
+        setUser(loggedInUser);
         navigate("/");
       })
       .catch((err) => console.error(err));
@@ -52,7 +59,13 @@ const Authentication: React.FC = () => {
                 console.log("Login Failed");
               }}
             />
-            <p className="text-grey-4 mt-4">Having some trouble? <span className="underline hover:text-light-1 cursor-pointer">Reach out</span> we can help</p>
+            <p className="text-grey-4 mt-4">
+              Having some trouble?{" "}
+              <span className="underline hover:text-light-1 cursor-pointer">
+                Reach out
+              </span>{" "}
+              we can help
+            </p>
           </div>
         </div>
       </main>

@@ -1,14 +1,14 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, Dispatch, SetStateAction } from "react";
 
-export type User = {
+export interface User {
   email: string;
   name: string;
-  is_staff: boolean;
-};
+  is_staff?: boolean;
+}
 
 export const UserContext = createContext<{
   user: User | null;
-  setUser: (user: User | null) => void;
+  setUser: Dispatch<SetStateAction<User | null>>;
 }>({
   user: null,
   setUser: () => {},
