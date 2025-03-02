@@ -6,7 +6,7 @@ import MyBots from "../components/myBots";
 import BotsNavBar from "../components/botsNavbar";
 import BotAnalytics from "../components/botsAnalytics";
 import ComingSoon from "../components/comingSoon";
-import useAuthRedirect from "../customHooks/useAuthRedirect";
+
 
 const Bots: React.FC = () => {
   // useAuthRedirect();
