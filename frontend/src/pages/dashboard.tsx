@@ -6,7 +6,7 @@ import BotsNotifications from "../components/botsNotifications";
 import useAuthRedirect from "../customHooks/useAuthRedirect";
 
 const Dashboard: React.FC = () => {
-  useAuthRedirect();
+  // useAuthRedirect();
   return (
     <>
       <AsidesSection />

@@ -22,12 +22,12 @@ const AsidesSection: React.FC = () => {
 
   return (
     <>
-      <aside className="fixed top-0 h-screen bg-dark-2 text-white p-4 border-r border-grey-3 z-20">
-        <div className="h-full flex flex-col gap-16">
+      <aside className="fixed top-0 h-screen bg-dark-2 text-white p-4 border-r border-grey-3 z-20 my-auto">
+        <div className="h-full flex items-stretch flex-col gap-16">
           <a>
             <img src={Logo} alt="logo" className="w-8" />
           </a>
-          <ul className="grow mx-auto text-lg flex flex-col gap-3">
+          <ul className="mx-auto text-lg flex flex-col gap-3">
             {asides_nav_link.map(({ icon, path, status }, index) => {
               const isActive = location.pathname === path ? "active" : status;
               return (
@@ -40,7 +40,7 @@ const AsidesSection: React.FC = () => {
             })}
           </ul>
 
-          <ul className="mx-auto text-md grid gap-3">
+          <ul className="mx-auto text-md mt-auto flex flex-col gap-3">
             <Link to="/settings" className="mx-auto">
               <i className="fa-solid fa-gear"></i>
             </Link>

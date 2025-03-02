@@ -9,7 +9,7 @@ import ComingSoon from "../components/comingSoon";
 import useAuthRedirect from "../customHooks/useAuthRedirect";
 
 const Settings: React.FC = () => {
-  useAuthRedirect();
+  // useAuthRedirect();
   const [activeTab, setActiveTab] = useState("account");
   return (
     <>

@@ -3,7 +3,7 @@ import AsidesSection from "../components/aside";
 import Legendary from '../assets/legendary.gif'
 import useAuthRedirect from "../customHooks/useAuthRedirect";
 const ComingSoonPage = () => {
-  useAuthRedirect();
+  // useAuthRedirect();
   return (
     <>
       <AsidesSection />

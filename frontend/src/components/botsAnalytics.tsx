@@ -27,11 +27,11 @@ const BotAnalytics: React.FC = () => {
   };
   return (
     <>
-      <div className="text-light-1 text-xs flex justify-between gap-16">
+      <div className="text-light-1 text-xs flex flex-col md:flex-row justify-between gap-16">
         <form
           method="get"
           action="#"
-          className="w-1/2 flex flex-col gap-2 text-xs bg-dark-2 border border-grey-3 rounded-xl p-3"
+          className="md:w-1/2 flex flex-col gap-2 text-xs bg-dark-2 border border-grey-3 rounded-xl p-3"
           onSubmit={handleSubmit}
         >
           <h2 className="text-xl font-bold">Asset Analysis</h2>
@@ -101,7 +101,7 @@ const BotAnalytics: React.FC = () => {
             </button>
           </div>
         </form>
-        <div className="w-1/2 bg-dark-2 border border-grey-3 rounded-xl p-3">
+        <div className="md:w-1/2 bg-dark-2 border border-grey-3 rounded-xl p-3">
           {loading && (
             <p className="text-grey-4 text-xl p-4">
               Enter ticker to analyse...

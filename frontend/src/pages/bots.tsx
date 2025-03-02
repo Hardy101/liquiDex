@@ -9,7 +9,7 @@ import ComingSoon from "../components/comingSoon";
 import useAuthRedirect from "../customHooks/useAuthRedirect";
 
 const Bots: React.FC = () => {
-  useAuthRedirect();
+  // useAuthRedirect();
   const [isBotSidebarActive, setIsBotSidebarActive] = useState(false);
   const [activeTab, setActiveTab] = useState("mybots");
   const secnavbtn = [

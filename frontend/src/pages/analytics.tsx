@@ -8,7 +8,7 @@ import TradeHistory from "../components/tradeHistory";
 import useAuthRedirect from "../customHooks/useAuthRedirect";
 
 const Analytics: React.FC = () => {
-  useAuthRedirect();
+  // useAuthRedirect();
   const [activeTab, setActiveTab] = useState("dashboard");
   return (
     <>

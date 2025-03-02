@@ -71,7 +71,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>(
     return (
       <div
         ref={ref}
-        className="createboxsidebar fixed top-16 w-2/5 h-full top-0 right-0 bg-dark-2 rounded-l-md border border-grey-3 z-10 text-light-1"
+        className="createboxsidebar fixed top-16 w-4/5 md:w-2/5 h-full top-0 right-0 bg-dark-2 rounded-l-md border border-grey-3 z-10 text-light-1"
         style={{
           transform: "translateX(100%)",
           opacity: 0,

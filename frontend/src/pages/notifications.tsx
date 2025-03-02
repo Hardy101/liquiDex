@@ -18,7 +18,7 @@ interface AppNotification {
 }
 
 const Notifications = () => {
-  useAuthRedirect();
+  // useAuthRedirect();
   const [notifications, setNotifications] = useState<AppNotification[]>([]);
   const [isSidebarActive, setIsSidebarActive] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
