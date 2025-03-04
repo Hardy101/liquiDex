@@ -55,7 +55,7 @@ const AsidesSection: React.FC = () => {
             <li className="mx-auto">
               <i className="fa-solid fa-question"></i>
             </li>
-            <Link to={user ? "/auth" : ""} className="mx-auto">
+            <Link to={user ? "/auth" : "#"} className="mx-auto">
               <i
                 onClick={user ? logout : undefined}
                 className={`fa-solid ${
